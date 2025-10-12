@@ -1,0 +1,65 @@
+{
+  "events": [
+    {
+      "id": "investment-workshop-2025",
+      "title": "Investment Workshop for Young Adults",
+      "date": "2025-10-15T18:00:00",
+      "location": "Virtual Event",
+      "tag": "Workshop",
+      "description": "Join us for an interactive workshop on investment basics, featuring practical exercises and real-world examples.",
+      "duration": "2 hours",
+      "capacity": 50,
+      "prerequisites": "None",
+      "speaker": "Sarah Chen, Investment Advisor"
+    },
+    {
+      "id": "budget-bootcamp-2025",
+      "title": "Budget Bootcamp",
+      "date": "2025-10-20T14:00:00",
+      "location": "City Library, Room 204",
+      "tag": "Seminar",
+      "description": "Intensive hands-on session to create and optimize your personal budget.",
+      "duration": "3 hours",
+      "capacity": 30,
+      "prerequisites": "Laptop recommended",
+      "speaker": "Michael Rodriguez, Financial Planner"
+    },
+    {
+      "id": "credit-seminar-2025",
+      "title": "Understanding Credit & Debt",
+      "date": "2025-11-05T17:30:00",
+      "location": "Virtual Event",
+      "tag": "Seminar",
+      "description": "Learn about credit scores, responsible borrowing, and debt management strategies.",
+      "duration": "90 minutes",
+      "capacity": 100,
+      "prerequisites": "None",
+      "speaker": "Lisa Thompson, Credit Counselor"
+    },
+    {
+      "id": "stock-market-2025",
+      "title": "Stock Market Simulation Challenge",
+      "date": "2025-11-15T09:00:00",
+      "location": "Virtual Event",
+      "tag": "Competition",
+      "description": "Put your investment knowledge to the test in our monthly stock market simulation challenge.",
+      "duration": "4 weeks",
+      "capacity": 200,
+      "prerequisites": "Basic investment knowledge",
+      "prizes": ["$500 Investment Account", "Financial Planning Session", "Investment Books"]
+    },
+    {
+      "id": "financial-goals-2025",
+      "title": "Setting Financial Goals Workshop",
+      "date": "2025-12-01T16:00:00",
+      "location": "Community Center",
+      "tag": "Workshop",
+      "description": "Learn how to set and achieve meaningful financial goals for your future.",
+      "duration": "2 hours",
+      "capacity": 40,
+      "prerequisites": "None",
+      "speaker": "David Park, Financial Coach"
+    }
+  ]
+}
+

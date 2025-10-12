@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volunteer - FutureFunds</title>
+  <meta name="description" content="Join our team of volunteers and help empower the next generation with financial literacy skills. Apply to become a mentor, workshop facilitator, or content creator.">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/images/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main" class="visually-hidden">Skip to main content</a>
+  
+  <!-- Navigation -->
+  <nav class="nav" role="navigation">
+    <div class="container nav__container">
+      <a href="/" class="nav__logo">FutureFunds</a>
+      
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span class="visually-hidden">Menu</span>
+        <svg width="24" height="24" aria-hidden="true">
+          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      
+      <ul class="nav__menu" id="nav-menu">
+        <li><a href="/programs.html" class="nav__link">Programs</a></li>
+        <li><a href="/courses.html" class="nav__link">Courses</a></li>
+        <li><a href="/resources.html" class="nav__link">Resources</a></li>
+        <li><a href="/events.html" class="nav__link">Events</a></li>
+        <li><a href="/about.html" class="nav__link">About</a></li>
+        <li><a href="/donate.html" class="nav__link nav__link--donate">Donate</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <main id="main">
+    <!-- Header -->
+    <header class="section" style="padding-block: var(--space-xl);">
+      <div class="container">
+        <div class="section__header reveal">
+          <h1>Volunteer With Us</h1>
+          <p class="text-muted" style="font-size: 1.25rem;">
+            Share your expertise and help shape the financial future of young people.
+          </p>
+        </div>
+      </div>
+    </header>
+    
+    <!-- Volunteer Opportunities -->
+    <section class="section">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__eyebrow">Opportunities</span>
+          <h2>Ways to Get Involved</h2>
+        </header>
+        
+        <div class="grid reveal">
+          <div class="card">
+            <h3>Workshop Facilitator</h3>
+            <ul class="stack-sm">
+              <li>Lead interactive financial workshops</li>
+              <li>Guide hands-on learning activities</li>
+              <li>Share real-world experiences</li>
+              <li>Flexible scheduling options</li>
+            </ul>
+            <p class="text-muted" style="margin-top: var(--space-md);">
+              Required: 3+ years financial industry experience
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3>Student Mentor</h3>
+            <ul class="stack-sm">
+              <li>One-on-one guidance</li>
+              <li>Career path advice</li>
+              <li>Goal setting support</li>
+              <li>Virtual mentoring available</li>
+            </ul>
+            <p class="text-muted" style="margin-top: var(--space-md);">
+              Required: Professional experience in finance or education
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3>Content Creator</h3>
+            <ul class="stack-sm">
+              <li>Develop educational materials</li>
+              <li>Write blog posts and guides</li>
+              <li>Create video content</li>
+              <li>Remote work possible</li>
+            </ul>
+            <p class="text-muted" style="margin-top: var(--space-md);">
+              Required: Strong writing skills and financial knowledge
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Benefits Section -->
+    <section class="section">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__eyebrow">Why Volunteer</span>
+          <h2>Volunteer Benefits</h2>
+        </header>
+        
+        <div class="grid reveal">
+          <div class="card">
+            <h3>Professional Development</h3>
+            <ul class="stack-sm">
+              <li>Leadership experience</li>
+              <li>Teaching skills</li>
+              <li>Networking opportunities</li>
+              <li>Professional references</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>Personal Growth</h3>
+            <ul class="stack-sm">
+              <li>Make a meaningful impact</li>
+              <li>Build new relationships</li>
+              <li>Share your knowledge</li>
+              <li>Community involvement</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>Program Perks</h3>
+            <ul class="stack-sm">
+              <li>Volunteer certification</li>
+              <li>Training workshops</li>
+              <li>Recognition events</li>
+              <li>Resource access</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Application Form -->
+    <section class="section">
+      <div class="container">
+        <div class="card reveal" style="max-width: var(--container-sm); margin-inline: auto;">
+          <h2>Volunteer Application</h2>
+          
+          <form id="volunteer-form" class="stack" style="margin-top: var(--space-xl);">
+            <!-- Personal Information -->
+            <div class="stack">
+              <h3>Personal Information</h3>
+              
+              <div class="form-group">
+                <label for="full-name" class="label">Full Name</label>
+                <input type="text" id="full-name" name="name" class="input" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="email" class="label">Email Address</label>
+                <input type="email" id="email" name="email" class="input" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="phone" class="label">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="input" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="location" class="label">Location</label>
+                <input type="text" id="location" name="location" class="input" required
+                       placeholder="City, State">
+              </div>
+            </div>
+            
+            <!-- Volunteer Interests -->
+            <div class="stack">
+              <h3>Areas of Interest</h3>
+              
+              <div class="form-group">
+                <label for="role" class="label">Preferred Role</label>
+                <select id="role" name="role" class="select" required>
+                  <option value="">Select a role</option>
+                  <option value="facilitator">Workshop Facilitator</option>
+                  <option value="mentor">Student Mentor</option>
+                  <option value="content">Content Creator</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="availability" class="label">Availability</label>
+                <select id="availability" name="availability" class="select" required>
+                  <option value="">Select availability</option>
+                  <option value="weekdays">Weekdays</option>
+                  <option value="evenings">Evenings</option>
+                  <option value="weekends">Weekends</option>
+                  <option value="flexible">Flexible</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="commitment" class="label">Time Commitment</label>
+                <select id="commitment" name="commitment" class="select" required>
+                  <option value="">Select hours per month</option>
+                  <option value="5">5 hours</option>
+                  <option value="10">10 hours</option>
+                  <option value="15">15 hours</option>
+                  <option value="20">20+ hours</option>
+                </select>
+              </div>
+            </div>
+            
+            <!-- Experience -->
+            <div class="stack">
+              <h3>Experience & Skills</h3>
+              
+              <div class="form-group">
+                <label for="experience" class="label">Relevant Experience</label>
+                <textarea id="experience" 
+                         name="experience" 
+                         class="textarea" 
+                         rows="4"
+                         required
+                         placeholder="Describe your professional experience, particularly in finance or education."></textarea>
+              </div>
+              
+              <div class="form-group">
+                <label for="skills" class="label">Special Skills</label>
+                <textarea id="skills" 
+                         name="skills" 
+                         class="textarea" 
+                         rows="4"
+                         required
+                         placeholder="List any special skills or certifications relevant to your preferred role."></textarea>
+              </div>
+              
+              <div class="form-group">
+                <label for="motivation" class="label">Motivation</label>
+                <textarea id="motivation" 
+                         name="motivation" 
+                         class="textarea" 
+                         rows="4"
+                         required
+                         placeholder="Why do you want to volunteer with FutureFunds?"></textarea>
+              </div>
+            </div>
+            
+            <!-- References -->
+            <div class="stack">
+              <h3>References</h3>
+              <p class="text-muted">Please provide two professional references.</p>
+              
+              <!-- Reference 1 -->
+              <div class="stack-sm">
+                <div class="form-group">
+                  <label for="ref1-name" class="label">Reference 1 Name</label>
+                  <input type="text" id="ref1-name" name="ref1_name" class="input" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="ref1-relation" class="label">Relationship</label>
+                  <input type="text" id="ref1-relation" name="ref1_relation" class="input" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="ref1-contact" class="label">Contact Information</label>
+                  <input type="text" id="ref1-contact" name="ref1_contact" class="input" required
+                         placeholder="Email or phone">
+                </div>
+              </div>
+              
+              <!-- Reference 2 -->
+              <div class="stack-sm">
+                <div class="form-group">
+                  <label for="ref2-name" class="label">Reference 2 Name</label>
+                  <input type="text" id="ref2-name" name="ref2_name" class="input" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="ref2-relation" class="label">Relationship</label>
+                  <input type="text" id="ref2-relation" name="ref2_relation" class="input" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="ref2-contact" class="label">Contact Information</label>
+                  <input type="text" id="ref2-contact" name="ref2_contact" class="input" required
+                         placeholder="Email or phone">
+                </div>
+              </div>
+            </div>
+            
+            <!-- Agreement -->
+            <div class="form-group">
+              <label>
+                <input type="checkbox" name="agreement" required>
+                I understand that submitting this application does not guarantee acceptance into the volunteer program.
+              </label>
+            </div>
+            
+            <button type="submit" class="btn btn--primary">Submit Application</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="section" style="background-color: var(--ff-surface);">
+    <div class="container">
+      <div class="grid" style="gap: var(--space-xl);">
+        <div>
+          <h2 class="nav__logo">FutureFunds</h2>
+          <p class="text-muted" style="margin-top: var(--space-sm);">
+            Empowering the next generation with financial knowledge and skills.
+          </p>
+        </div>
+        
+        <nav aria-label="Footer Navigation">
+          <div class="grid" style="gap: var(--space-lg);">
+            <div>
+              <h3>Learn</h3>
+              <ul class="stack-sm" style="list-style: none;">
+                <li><a href="/programs.html">Programs</a></li>
+                <li><a href="/courses.html">Courses</a></li>
+                <li><a href="/resources.html">Resources</a></li>
+                <li><a href="/events.html">Events</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3>About</h3>
+              <ul class="stack-sm" style="list-style: none;">
+                <li><a href="/about.html">Our Mission</a></li>
+                <li><a href="/about.html#team">Team</a></li>
+                <li><a href="/volunteer.html">Volunteer</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3>Connect</h3>
+              <ul class="stack-sm" style="list-style: none;">
+                <li><a href="https://twitter.com/futurefunds">Twitter</a></li>
+                <li><a href="https://linkedin.com/company/futurefunds">LinkedIn</a></li>
+                <li><a href="https://instagram.com/futurefunds">Instagram</a></li>
+                <li><a href="/contact.html">Get in Touch</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      
+      <div style="margin-top: var(--space-2xl); text-align: center;">
+        <p class="text-muted">
+          © 2025 FutureFunds. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script type="module" src="/assets/js/main.js"></script>
+  <script type="module" src="/assets/js/validate.js"></script>
+  
+  <script type="module">
+    import FormValidator from '/assets/js/validate.js';
+    import { createToast } from '/assets/js/main.js';
+    
+    // Initialize form validation
+    const form = document.getElementById('volunteer-form');
+    
+    const validator = new FormValidator(form, {
+      name: {
+        required: true,
+        minLength: 2
+      },
+      email: {
+        required: true,
+        email: true
+      },
+      phone: {
+        required: true,
+        pattern: /^\+?[\d\s-()]+$/,
+        message: 'Please enter a valid phone number'
+      },
+      location: {
+        required: true,
+        minLength: 2
+      },
+      experience: {
+        required: true,
+        minLength: 50
+      },
+      skills: {
+        required: true,
+        minLength: 20
+      },
+      motivation: {
+        required: true,
+        minLength: 50
+      }
+    });
+    
+    // Handle form submission
+    form.addEventListener('form:valid', (e) => {
+      const data = e.detail;
+      console.log('Volunteer application data:', data);
+      
+      // In a real implementation, this would:
+      // 1. Send data to server
+      // 2. Send confirmation email
+      // 3. Update database
+      
+      createToast('Application submitted successfully! We\'ll be in touch soon.');
+      form.reset();
+    });
+  </script>
+</body>
+</html>

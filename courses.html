@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses - FutureFunds</title>
+  <meta name="description" content="Browse our collection of financial literacy courses designed for teens and young adults. Learn budgeting, investing, credit management, and more.">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/images/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main" class="visually-hidden">Skip to main content</a>
+  
+  <!-- Navigation -->
+  <nav class="nav" role="navigation">
+    <div class="container nav__container">
+      <a href="/" class="nav__logo">FutureFunds</a>
+      
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span class="visually-hidden">Menu</span>
+        <svg width="24" height="24" aria-hidden="true">
+          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      
+      <ul class="nav__menu" id="nav-menu">
+        <li><a href="/programs.html" class="nav__link">Programs</a></li>
+        <li><a href="/courses.html" class="nav__link" aria-current="page">Courses</a></li>
+        <li><a href="/resources.html" class="nav__link">Resources</a></li>
+        <li><a href="/events.html" class="nav__link">Events</a></li>
+        <li><a href="/about.html" class="nav__link">About</a></li>
+        <li><a href="/donate.html" class="nav__link nav__link--donate">Donate</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <main id="main">
+    <!-- Header -->
+    <header class="section" style="padding-block: var(--space-xl);">
+      <div class="container">
+        <div class="section__header reveal">
+          <h1>Our Courses</h1>
+          <p class="text-muted">
+            Master essential financial skills with our structured, self-paced courses.
+            All courses are free and designed for teens and young adults.
+          </p>
+        </div>
+      </div>
+    </header>
+    
+    <!-- Filters -->
+    <section class="section" style="padding-block: 0;">
+      <div class="container">
+        <div class="card reveal">
+          <div class="stack">
+            <!-- Search -->
+            <div class="form-group">
+              <label for="course-search" class="label">Search Courses</label>
+              <input type="search" id="course-search" 
+                     class="input" 
+                     placeholder="Search by title or keyword"
+                     data-filter-search>
+            </div>
+            
+            <!-- Filter Controls -->
+            <div class="cluster" style="justify-content: space-between; flex-wrap: wrap; gap: var(--space-md);">
+              <!-- Topics -->
+              <div class="cluster" role="group" aria-label="Filter by topic">
+                <button class="btn btn--subtle" data-filter-topic="Budgeting">Budgeting</button>
+                <button class="btn btn--subtle" data-filter-topic="Investing">Investing</button>
+                <button class="btn btn--subtle" data-filter-topic="Credit">Credit</button>
+                <button class="btn btn--subtle" data-filter-topic="Planning">Planning</button>
+              </div>
+              
+              <!-- Level -->
+              <div class="form-group" style="margin: 0; min-width: 200px;">
+                <label for="level-select" class="label">Level</label>
+                <select id="level-select" class="select" data-filter-level>
+                  <option value="">All Levels</option>
+                  <option value="Beginner">Beginner</option>
+                  <option value="Intermediate">Intermediate</option>
+                  <option value="Advanced">Advanced</option>
+                </select>
+              </div>
+            </div>
+            
+            <!-- Active Filters -->
+            <div class="filter-badges cluster" role="status" aria-live="polite"></div>
+          </div>
+        </div>
+        
+        <!-- Results Count -->
+        <div class="text-muted" style="margin-top: var(--space-md);">
+          <span id="filter-announcement" class="visually-hidden" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Course Grid -->
+    <section class="section">
+      <div class="container">
+        <div class="course-grid grid reveal">
+          <!-- Courses are dynamically populated here -->
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Course Syllabus Modals -->
+  <div id="syllabus-modals">
+    <!-- Modals are dynamically populated -->
+  </div>
+  
+  <!-- Footer -->
+  <footer class="section" style="background-color: var(--ff-surface);">
+    <div class="container">
+      <div class="grid" style="gap: var(--space-xl);">
+        <div>
+          <h2 class="nav__logo">FutureFunds</h2>
+          <p class="text-muted" style="margin-top: var(--space-sm);">
+            Empowering the next generation with financial knowledge and skills.
+          </p>
+        </div>
+        
+        <nav aria-label="Footer Navigation">
+          <div class="grid" style="gap: var(--space-lg);">
+            <div>
+              <h3>Learn</h3>
+              <ul class="stack-sm" style="list-style: none;">
+                <li><a href="/programs.html">Programs</a></li>
+                <li><a href="/courses.html">Courses</a></li>
+                <li><a href="/resources.html">Resources</a></li>
+                <li><a href="/events.html">Events</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3>About</h3>
+              <ul class="stack-sm" style="list-style: none;">
+                <li><a href="/about.html">Our Mission</a></li>
+                <li><a href="/about.html#team">Team</a></li>
+                <li><a href="/volunteer.html">Volunteer</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3>Connect</h3>
+              <ul class="stack-sm" style="list-style: none;">
+                <li><a href="https://twitter.com/futurefunds">Twitter</a></li>
+                <li><a href="https://linkedin.com/company/futurefunds">LinkedIn</a></li>
+                <li><a href="https://instagram.com/futurefunds">Instagram</a></li>
+                <li><a href="/contact.html">Get in Touch</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      
+      <div style="margin-top: var(--space-2xl); text-align: center;">
+        <p class="text-muted">
+          © 2025 FutureFunds. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script type="module" src="/assets/js/main.js"></script>
+  <script type="module" src="/assets/js/modal.js"></script>
+  <script type="module" src="/assets/js/filter.js"></script>
+  
+  <script type="module">
+    // Create syllabus modals
+    fetch('/assets/data/courses.json')
+      .then(response => response.json())
+      .then(data => {
+        const modalsContainer = document.getElementById('syllabus-modals');
+        
+        data.courses.forEach(course => {
+          const modal = document.createElement('div');
+          modal.className = 'modal';
+          modal.id = `syllabus-${course.slug}`;
+          modal.setAttribute('aria-labelledby', `syllabus-title-${course.slug}`);
+          
+          modal.innerHTML = `
+            <div class="modal__content">
+              <button class="modal__close" aria-label="Close modal">×</button>
+              
+              <h2 id="syllabus-title-${course.slug}">${course.title} - Syllabus</h2>
+              
+              <div class="stack" style="margin-top: var(--space-lg);">
+                <div>
+                  <h3>Course Overview</h3>
+                  <p>${course.summary}</p>
+                </div>
+                
+                <div>
+                  <h3>What You'll Learn</h3>
+                  <ul class="stack-sm">
+                    ${course.syllabus.map(item => `<li>${item}</li>`).join('')}
+                  </ul>
+                </div>
+                
+                <div class="cluster" style="margin-top: var(--space-xl);">
+                  <a href="/course-${course.slug}.html" class="btn btn--primary">
+                    Start Course
+                  </a>
+                </div>
+              </div>
+            </div>
+          `;
+          
+          modalsContainer.appendChild(modal);
+        });
+      })
+      .catch(error => console.error('Error loading course data:', error));
+  </script>
+</body>
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programs - FutureFunds</title>
+  <meta name="description" content="Explore our financial education programs including seminars, workshops, and competitions designed for teens and young adults.">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/images/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main" class="visually-hidden">Skip to main content</a>
+  
+  <!-- Navigation -->
+  <nav class="nav" role="navigation">
+    <div class="container nav__container">
+      <a href="/" class="nav__logo">FutureFunds</a>
+      
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span class="visually-hidden">Menu</span>
+        <svg width="24" height="24" aria-hidden="true">
+          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      
+      <ul class="nav__menu" id="nav-menu">
+        <li><a href="/programs.html" class="nav__link" aria-current="page">Programs</a></li>
+        <li><a href="/courses.html" class="nav__link">Courses</a></li>
+        <li><a href="/resources.html" class="nav__link">Resources</a></li>
+        <li><a href="/events.html" class="nav__link">Events</a></li>
+        <li><a href="/about.html" class="nav__link">About</a></li>
+        <li><a href="/donate.html" class="nav__link nav__link--donate">Donate</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <main id="main">
+    <!-- Header -->
+    <header class="section" style="padding-block: var(--space-xl);">
+      <div class="container">
+        <div class="section__header reveal">
+          <h1>Our Programs</h1>
+          <p class="text-muted">
+            Join our interactive programs designed to build practical financial skills through hands-on learning experiences.
+          </p>
+        </div>
+      </div>
+    </header>
+    
+    <!-- Seminars -->
+    <section class="section" id="seminars" aria-labelledby="seminars-title">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__eyebrow">Live Learning</span>
+          <h2 id="seminars-title">Financial Seminars</h2>
+          <p class="text-muted">
+            Expert-led sessions covering essential financial topics, with opportunities for Q&A and discussion.
+          </p>
+        </header>
+        
+        <div class="grid reveal">
+          <div class="card">
+            <h3>Investment Basics</h3>
+            <p>A comprehensive introduction to investing fundamentals, market dynamics, and building a starter portfolio.</p>
+            <ul class="stack-sm" style="margin: var(--space-md) 0;">
+              <li>Understanding investment vehicles</li>
+              <li>Risk assessment strategies</li>
+              <li>Portfolio diversification</li>
+              <li>Market analysis basics</li>
+            </ul>
+            <button class="btn btn--primary" data-modal-target="seminar-rsvp">
+              Register Interest
+            </button>
+          </div>
+          
+          <div class="card">
+            <h3>Credit & Debt Management</h3>
+            <p>Learn how to build good credit and manage debt responsibly while avoiding common pitfalls.</p>
+            <ul class="stack-sm" style="margin: var(--space-md) 0;">
+              <li>Credit score fundamentals</li>
+              <li>Building credit history</li>
+              <li>Debt reduction strategies</li>
+              <li>Credit protection tips</li>
+            </ul>
+            <button class="btn btn--primary" data-modal-target="seminar-rsvp">
+              Register Interest
+            </button>
+          </div>
+          
+          <div class="card">
+            <h3>Financial Planning</h3>
+            <p>Create a solid financial foundation with practical planning tools and strategies.</p>
+            <ul class="stack-sm" style="margin: var(--space-md) 0;">
+              <li>Goal setting framework</li>
+              <li>Budgeting techniques</li>
+              <li>Emergency planning</li>
+              <li>Future forecasting</li>
+            </ul>
+            <button class="btn btn--primary" data-modal-target="seminar-rsvp">
+              Register Interest
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Workshops -->
+    <section class="section" id="workshops" aria-labelledby="workshops-title">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__eyebrow">Hands-on Learning</span>
+          <h2 id="workshops-title">Interactive Workshops</h2>
+          <p class="text-muted">
+            Small-group sessions focused on practical skills and real-world applications.
+          </p>
+        </header>
+        
+        <div class="grid reveal">
+          <div class="card">
+            <h3>Budget Bootcamp</h3>
+            <p>Create and optimize your personal budget with expert guidance and practical exercises.</p>
+            <ul class="stack-sm" style="margin: var(--space-md) 0;">
+              <li>3-hour intensive session</li>
+              <li>Hands-on budget creation</li>
+              <li>Personalized feedback</li>
+              <li>Take-home resources</li>
+            </ul>
+            <button class="btn btn--primary" data-modal-target="workshop-rsvp">
+              Join Workshop
+            </button>
+          </div>
+          
+          <div class="card">
+            <h3>Investment Simulator</h3>
+            <p>Practice investment strategies in a risk-free environment with our virtual trading platform.</p>
+            <ul class="stack-sm" style="margin: var(--space-md) 0;">
+              <li>Real market conditions</li>
+              <li>Portfolio management</li>
+              <li>Risk analysis</li>
+              <li>Performance tracking</li>
+            </ul>
+            <a href="/simulator.html" class="btn btn--secondary">
+              Learn More
+            </a>
+          </div>
+          
+          <div class="card">
+            <h3>Financial Tech Tools</h3>
+            <p>Master digital tools and apps for managing your finances effectively.</p>
+            <ul class="stack-sm" style="margin: var(--space-md) 0;">
+              <li>Budgeting apps</li>
+              <li>Investment platforms</li>
+              <li>Banking tools</li>
+              <li>Security practices</li>
+            </ul>
+            <button class="btn btn--primary" data-modal-target="workshop-rsvp">
+              Join Workshop
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Competition -->
+    <section class="section" id="competition" aria-labelledby="competition-title">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__eyebrow">Challenge Yourself</span>
+          <h2 id="competition-title">Investment Competition</h2>
+          <p class="text-muted">
+            Put your investment knowledge to the test in our monthly stock market simulation challenge.
+          </p>
+        </header>
+        
+        <div class="card reveal">
+          <div class="grid" style="gap: var(--space-xl);">
+            <div class="stack">
+              <h3>How It Works</h3>
+              <ul class="stack-sm">
+                <li>Start with $100,000 virtual cash</li>
+                <li>Build and manage your portfolio</li>
+                <li>Trade stocks, ETFs, and mutual funds</li>
+                <li>Compete for monthly prizes</li>
+                <li>Learn from top performers</li>
+                <li>Track your progress on the leaderboard</li>
+              </ul>
+              
+              <div style="margin-top: var(--space-lg);">
+                <h3>Prizes</h3>
+                <ul class="stack-sm">
+                  <li>1st Place: $500 Investment Account</li>
+                  <li>2nd Place: Financial Planning Session</li>
+                  <li>3rd Place: Investment Books Package</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="stack">
+              <h3>Next Competition</h3>
+              <p>Starts November 15, 2025</p>
+              
+              <div class="stack" style="margin-top: var(--space-lg);">
+                <button class="btn btn--primary w-full" data-modal-target="competition-register">
+                  Register Now
+                </button>
+                <a href="/simulator.html" class="btn btn--secondary w-full">
+                  Try Practice Mode
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Modals -->
+  <!-- Seminar RSVP Modal -->
+  <div class="modal" id="seminar-rsvp" aria-labelledby="seminar-modal-title">
+    <div class="modal__content">
+      <button class="modal__close" aria-label="Close modal">×</button>
+      
+      <h2 id="seminar-modal-title">Register for Seminar</h2>
+      
+      <form class="stack" style="margin-top: var(--space-lg);">
+        <div class="form-group">
+          <label for="seminar-name" class="label">Full Name</label>
+          <input type="text" id="seminar-name" name="name" class="input" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="seminar-email" class="label">Email Address</label>
+          <input type="email" id="seminar-email" name="email" class="input" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="seminar-topic" class="label">Preferred Topic</label>
+          <select id="seminar-topic" name="topic" class="select" required>
+            <option value="">Select a topic</option>
+            <option value="investment">Investment Basics</option>
+            <option value="credit">Credit & Debt Management</option>
+            <option value="planning">Financial Planning</option>
+          </select>
+        </div>
+        
+        <button type="submit" class="btn btn--primary">Submit Registration</button>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Workshop RSVP Modal -->
+  <div class="modal" id="workshop-rsvp" aria-labelledby="workshop-modal-title">
+    <div class="modal__content">
+      <button class="modal__close" aria-label="Close modal">×</button>
+      
+      <h2 id="workshop-modal-title">Join Workshop</h2>
+      
+      <form class="stack" style="margin-top: var(--space-lg);">
+        <div class="form-group">
+          <label for="workshop-name" class="label">Full Name</label>
+          <input type="text" id="workshop-name" name="name" class="input" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="workshop-email" class="label">Email Address</label>
+          <input type="email" id="workshop-email" name="email" class="input" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="workshop-type" class="label">Workshop</label>
+          <select id="workshop-type" name="type" class="select" required>
+            <option value="">Select a workshop</option>
+            <option value="budget">Budget Bootcamp</option>
+            <option value="tech">Financial Tech Tools</option>
+          </select>
+        </div>
+        
+        <button type="submit" class="btn btn--primary">Reserve Spot</button>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Competition Registration Modal -->
+  <div class="modal" id="competition-register" aria-labelledby="competition-modal-title">
+    <div class="modal__content">
+      <button class="modal__close" aria-label="Close modal">×</button>
+      
+      <h2 id="competition-modal-title">Register for Investment Competition</h2>
+      
+      <form class="stack" style="margin-top: var(--space-lg);">
+        <div class="form-group">
+          <label for="comp-name" class="label">Full Name</label>
+          <input type="text" id="comp-name" name="name" class="input" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="comp-email" class="label">Email Address</label>
+          <input type="email" id="comp-email" name="email" class="input" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="comp-experience" class="label">Investment Experience</label>
+          <select id="comp-experience" name="experience" class="select" required>
+            <option value="">Select your experience level</option>
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label class="label">
+            <input type="checkbox" name="terms" required>
+            I agree to the competition rules and terms
+          </label>
+        </div>
+        
+        <button type="submit" class="btn btn--primary">Register</button>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer class="section" style="background-color: var(--ff-surface);">
+    <div class="container">
+      <div class="grid" style="gap: var(--space-xl);">
+        <div>
+          <h2 class="nav__logo">FutureFunds</h2>
+          <p class="text-muted" style="margin-top: var(--space-sm);">
+            Empowering the next generation with financial knowledge and skills.
+          </p>
+        </div>
+        
+        <nav aria-label="Footer Navigation">
+          <div class="grid" style="gap: var(--space-lg);">
+            <div>
+              <h3>Learn</h3>
+              <ul class="stack-sm" style="list-style: none;">
+                <li><a href="/programs.html">Programs</a></li>
+                <li><a href="/courses.html">Courses</a></li>
+                <li><a href="/resources.html">Resources</a></li>
+                <li><a href="/events.html">Events</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3>About</h3>
+              <ul class="stack-sm" style="list-style: none;">
+                <li><a href="/about.html">Our Mission</a></li>
+                <li><a href="/about.html#team">Team</a></li>
+                <li><a href="/volunteer.html">Volunteer</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3>Connect</h3>
+              <ul class="stack-sm" style="list-style: none;">
+                <li><a href="https://twitter.com/futurefunds">Twitter</a></li>
+                <li><a href="https://linkedin.com/company/futurefunds">LinkedIn</a></li>
+                <li><a href="https://instagram.com/futurefunds">Instagram</a></li>
+                <li><a href="/contact.html">Get in Touch</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      
+      <div style="margin-top: var(--space-2xl); text-align: center;">
+        <p class="text-muted">
+          © 2025 FutureFunds. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script type="module" src="/assets/js/main.js"></script>
+  <script type="module" src="/assets/js/modal.js"></script>
+  <script type="module" src="/assets/js/validate.js"></script>
+  
+  <script type="module">
+    import FormValidator from '/assets/js/validate.js';
+    
+    // Initialize form validation for all modals
+    document.querySelectorAll('.modal form').forEach(form => {
+      new FormValidator(form, {
+        name: {
+          required: true,
+          minLength: 2
+        },
+        email: {
+          required: true,
+          email: true
+        }
+      });
+      
+      // Handle form submission
+      form.addEventListener('form:valid', (e) => {
+        const data = e.detail;
+        console.log('Form submitted:', data);
+        // In a real implementation, this would send data to a server
+      });
+    });
+  </script>
+</body>
+</html>

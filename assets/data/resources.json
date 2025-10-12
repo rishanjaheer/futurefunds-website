@@ -1,0 +1,65 @@
+{
+  "resources": [
+    {
+      "id": "budget-template",
+      "title": "Monthly Budget Template",
+      "description": "A comprehensive Excel template for tracking monthly income, expenses, and savings goals. Includes automated calculations and visualization charts.",
+      "fileType": "xlsx",
+      "category": "Budgeting",
+      "href": "/downloads/budget-template.xlsx",
+      "size": "245 KB",
+      "lastUpdated": "2025-09-01"
+    },
+    {
+      "id": "investing-guide",
+      "title": "Investing 101 Guide",
+      "description": "A beginner's guide to investing, covering fundamental concepts, different investment vehicles, and strategies for building a balanced portfolio.",
+      "fileType": "pdf",
+      "category": "Investing",
+      "href": "/downloads/investing-101-guide.pdf",
+      "size": "1.2 MB",
+      "lastUpdated": "2025-08-15"
+    },
+    {
+      "id": "credit-debt-guide",
+      "title": "Credit & Debt Management Guide",
+      "description": "Learn about credit scores, responsible borrowing, and strategies for managing and reducing debt effectively.",
+      "fileType": "pdf",
+      "category": "Credit",
+      "href": "/downloads/credit-debt-guide.pdf",
+      "size": "890 KB",
+      "lastUpdated": "2025-09-10"
+    },
+    {
+      "id": "savings-tracker",
+      "title": "Savings Goal Tracker",
+      "description": "Track your progress toward multiple savings goals with this interactive spreadsheet. Features progress visualization and milestone tracking.",
+      "fileType": "xlsx",
+      "category": "Saving",
+      "href": "/downloads/savings-tracker.xlsx",
+      "size": "180 KB",
+      "lastUpdated": "2025-08-30"
+    },
+    {
+      "id": "investment-calculator",
+      "title": "Investment Calculator",
+      "description": "Calculate potential returns on your investments with this spreadsheet tool. Includes compound interest calculations and different investment scenarios.",
+      "fileType": "xlsx",
+      "category": "Investing",
+      "href": "/downloads/investment-calculator.xlsx",
+      "size": "320 KB",
+      "lastUpdated": "2025-09-05"
+    },
+    {
+      "id": "emergency-fund",
+      "title": "Emergency Fund Planning Guide",
+      "description": "Learn how to build and maintain an emergency fund, with worksheets to calculate your optimal fund size based on your circumstances.",
+      "fileType": "pdf",
+      "category": "Planning",
+      "href": "/downloads/emergency-fund-guide.pdf",
+      "size": "450 KB",
+      "lastUpdated": "2025-08-20"
+    }
+  ]
+}
+

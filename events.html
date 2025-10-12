@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events - FutureFunds</title>
+  <meta name="description" content="Join our upcoming financial education events including workshops, seminars, and competitions. RSVP today to secure your spot.">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/images/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main" class="visually-hidden">Skip to main content</a>
+  
+  <!-- Navigation -->
+  <nav class="nav" role="navigation">
+    <div class="container nav__container">
+      <a href="/" class="nav__logo">FutureFunds</a>
+      
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span class="visually-hidden">Menu</span>
+        <svg width="24" height="24" aria-hidden="true">
+          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      
+      <ul class="nav__menu" id="nav-menu">
+        <li><a href="/programs.html" class="nav__link">Programs</a></li>
+        <li><a href="/courses.html" class="nav__link">Courses</a></li>
+        <li><a href="/resources.html" class="nav__link">Resources</a></li>
+        <li><a href="/events.html" class="nav__link" aria-current="page">Events</a></li>
+        <li><a href="/about.html" class="nav__link">About</a></li>
+        <li><a href="/donate.html" class="nav__link nav__link--donate">Donate</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <main id="main">
+    <!-- Header -->
+    <header class="section" style="padding-block: var(--space-xl);">
+      <div class="container">
+        <div class="section__header reveal">
+          <h1>Upcoming Events</h1>
+          <p class="text-muted">
+            Join our interactive events to enhance your financial knowledge and network with peers.
+          </p>
+        </div>
+      </div>
+    </header>
+    
+    <!-- Event Filters -->
+    <section class="section" style="padding-block: 0;">
+      <div class="container">
+        <div class="card reveal">
+          <div class="cluster" style="justify-content: space-between; flex-wrap: wrap; gap: var(--space-md);">
+            <!-- Event Type Filter -->
+            <div class="cluster">
+              <button class="btn btn--subtle" data-filter-type="all">All</button>
+              <button class="btn btn--subtle" data-filter-type="Workshop">Workshops</button>
+              <button class="btn btn--subtle" data-filter-type="Seminar">Seminars</button>
+              <button class="btn btn--subtle" data-filter-type="Competition">Competitions</button>
+            </div>
+            
+            <!-- Location Filter -->
+            <div class="form-group" style="margin: 0; min-width: 200px;">
+              <select class="select" data-filter-location>
+                <option value="all">All Locations</option>
+                <option value="Virtual Event">Virtual Events</option>
+                <option value="City Library">City Library</option>
+                <option value="Community Center">Community Center</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Event List -->
+    <section class="section">
+      <div class="container">
+        <div id="event-list" class="stack reveal">
+          <!-- Events are dynamically populated here -->
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- RSVP Modal -->
+  <div class="modal" id="rsvp-modal" aria-labelledby="rsvp-modal-title">
+    <div class="modal__content">
+      <button class="modal__close" aria-label="Close modal">×</button>
+      
+      <h2 id="rsvp-modal-title">RSVP for Event</h2>
+      
+      <form class="stack" style="margin-top: var(--space-lg);">
+        <input type="hidden" name="eventId" id="rsvp-event-id">
+        
+        <div class="form-group">
+          <label for="rsvp-name" class="label">Full Name</label>
+          <input type="text" id="rsvp-name" name="name" class="input" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="rsvp-email" class="label">Email Address</label>
+          <input type="email" id="rsvp-email" name="email" class="input" required>
+        </div>
+        
+        <div class="form-group">
+          <label>
+            <input type="checkbox" name="reminder" checked>
+            Send me an email reminder 24 hours before the event
+          </label>
+        </div>
+        
+        <div class="cluster">
+          <button type="submit" class="btn btn--primary">Confirm RSVP</button>
+          <button type="button" class="btn btn--secondary add-to-calendar" disabled>
+            Add to Calendar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer class="section" style="background-color: var(--ff-surface);">
+    <div class="container">
+      <div class="grid" style="gap: var(--space-xl);">
+        <div>
+          <h2 class="nav__logo">FutureFunds</h2>
+          <p class="text-muted" style="margin-top: var(--space-sm);">
+            Empowering the next generation with financial knowledge and skills.
+          </p>
+        </div>
+        
+        <nav aria-label="Footer Navigation">
+          <div class="grid" style="gap: var(--space-lg);">
+            <div>
+              <h3>Learn</h3>
+              <ul class="stack-sm" style="list-style: none;">
+                <li><a href="/programs.html">Programs</a></li>
+                <li><a href="/courses.html">Courses</a></li>
+                <li><a href="/resources.html">Resources</a></li>
+                <li><a href="/events.html">Events</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3>About</h3>
+              <ul class="stack-sm" style="list-style: none;">
+                <li><a href="/about.html">Our Mission</a></li>
+                <li><a href="/about.html#team">Team</a></li>
+                <li><a href="/volunteer.html">Volunteer</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3>Connect</h3>
+              <ul class="stack-sm" style="list-style: none;">
+                <li><a href="https://twitter.com/futurefunds">Twitter</a></li>
+                <li><a href="https://linkedin.com/company/futurefunds">LinkedIn</a></li>
+                <li><a href="https://instagram.com/futurefunds">Instagram</a></li>
+                <li><a href="/contact.html">Get in Touch</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      
+      <div style="margin-top: var(--space-2xl); text-align: center;">
+        <p class="text-muted">
+          © 2025 FutureFunds. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script type="module" src="/assets/js/main.js"></script>
+  <script type="module" src="/assets/js/modal.js"></script>
+  <script type="module" src="/assets/js/validate.js"></script>
+  
+  <script type="module">
+    import FormValidator from '/assets/js/validate.js';
+    import { createToast } from '/assets/js/main.js';
+    
+    // Event filtering and rendering
+    const typeButtons = document.querySelectorAll('[data-filter-type]');
+    const locationSelect = document.querySelector('[data-filter-location]');
+    const eventList = document.getElementById('event-list');
+    const rsvpModal = document.getElementById('rsvp-modal');
+    const rsvpForm = rsvpModal.querySelector('form');
+    const rsvpEventId = document.getElementById('rsvp-event-id');
+    
+    let events = [];
+    let activeType = 'all';
+    let activeLocation = 'all';
+    
+    // Fetch events
+    fetch('/assets/data/events.json')
+      .then(response => response.json())
+      .then(data => {
+        events = data.events;
+        renderEvents();
+      })
+      .catch(error => console.error('Error loading events:', error));
+    
+    // Filter events
+    function filterEvents() {
+      return events.filter(event => {
+        const matchesType = activeType === 'all' || event.tag === activeType;
+        const matchesLocation = activeLocation === 'all' || event.location === activeLocation;
+        return matchesType && matchesLocation;
+      });
+    }
+    
+    // Format date
+    function formatDate(dateString) {
+      const date = new Date(dateString);
+      return new Intl.DateTimeFormat('en-US', {
+        weekday: 'long',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: '2-digit'
+      }).format(date);
+    }
+    
+    // Create calendar link
+    function createCalendarLink(event) {
+      const start = new Date(event.date);
+      const end = new Date(start.getTime() + (parseInt(event.duration) * 60 * 60 * 1000));
+      
+      const details = `
+        ${event.description}
+        
+        Speaker: ${event.speaker || 'TBA'}
+        Prerequisites: ${event.prerequisites || 'None'}
+        
+        Location: ${event.location}
+      `.trim();
+      
+      const params = new URLSearchParams({
+        action: 'TEMPLATE',
+        text: event.title,
+        details: details,
+        location: event.location,
+        dates: `${start.toISOString().replace(/-|:|\.\d+/g, '')}/${end.toISOString().replace(/-|:|\.\d+/g, '')}`
+      });
+      
+      return `https://calendar.google.com/calendar/render?${params}`;
+    }
+    
+    // Render event card
+    function createEventCard(event) {
+      return `
+        <article class="card" id="${event.id}">
+          <div class="grid" style="gap: var(--space-xl);">
+            <!-- Event Info -->
+            <div class="stack">
+              <div class="cluster">
+                <span class="badge">${event.tag}</span>
+                <span class="text-muted">${event.duration}</span>
+              </div>
+              
+              <h2>${event.title}</h2>
+              <p>${event.description}</p>
+              
+              <div class="stack-sm text-muted">
+                <p>
+                  <strong>When:</strong> ${formatDate(event.date)}
+                </p>
+                <p>
+                  <strong>Where:</strong> ${event.location}
+                </p>
+                <p>
+                  <strong>Speaker:</strong> ${event.speaker || 'TBA'}
+                </p>
+                <p>
+                  <strong>Prerequisites:</strong> ${event.prerequisites || 'None'}
+                </p>
+              </div>
+            </div>
+            
+            <!-- Actions -->
+            <div class="stack" style="justify-content: center;">
+              <button class="btn btn--primary w-full" 
+                      onclick="openRSVP('${event.id}')"
+                      ${new Date(event.date) < new Date() ? 'disabled' : ''}>
+                ${new Date(event.date) < new Date() ? 'Event Ended' : 'RSVP Now'}
+              </button>
+              
+              <a href="${createCalendarLink(event)}" 
+                 class="btn btn--secondary w-full"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                Add to Calendar
+              </a>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+    
+    // Render filtered events
+    function renderEvents() {
+      const filteredEvents = filterEvents()
+        .sort((a, b) => new Date(a.date) - new Date(b.date));
+      
+      eventList.innerHTML = filteredEvents.length ? 
+        filteredEvents.map(createEventCard).join('') :
+        `<div class="text-center" style="padding: var(--space-2xl);">
+          <h2>No events found</h2>
+          <p class="text-muted">Try adjusting your filters or check back later.</p>
+        </div>`;
+      
+      // Update active type button
+      typeButtons.forEach(button => {
+        button.classList.toggle('is-active', 
+          button.dataset.filterType === activeType);
+      });
+    }
+    
+    // Event listeners
+    typeButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        activeType = button.dataset.filterType;
+        renderEvents();
+      });
+    });
+    
+    locationSelect.addEventListener('change', (e) => {
+      activeLocation = e.target.value;
+      renderEvents();
+    });
+    
+    // Initialize form validation
+    const validator = new FormValidator(rsvpForm, {
+      name: {
+        required: true,
+        minLength: 2
+      },
+      email: {
+        required: true,
+        email: true
+      }
+    });
+    
+    // Handle RSVP form submission
+    rsvpForm.addEventListener('form:valid', (e) => {
+      const data = e.detail;
+      console.log('RSVP submitted:', data);
+      
+      // In a real implementation, this would send data to a server
+      createToast('RSVP confirmed! Check your email for details.');
+      
+      // Enable calendar button
+      rsvpForm.querySelector('.add-to-calendar').disabled = false;
+    });
+    
+    // Global function to open RSVP modal
+    window.openRSVP = (eventId) => {
+      rsvpEventId.value = eventId;
+      const event = events.find(e => e.id === eventId);
+      
+      if (event) {
+        document.getElementById('rsvp-modal-title').textContent = 
+          `RSVP for ${event.title}`;
+      }
+      
+      const modal = document.getElementById('rsvp-modal');
+      modal.classList.add('is-active');
+    };
+  </script>
+</body>
+</html>

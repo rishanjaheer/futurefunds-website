@@ -1,0 +1,100 @@
+{
+  "courses": [
+    {
+      "title": "Budgeting & Saving",
+      "slug": "budgeting-101",
+      "level": "Beginner",
+      "duration": "10 Lessons",
+      "topics": ["Budgeting", "Saving", "Emergency Funds"],
+      "summary": "Master budgeting and saving with our comprehensive 10-lesson course. Learn to track expenses, create budgets, build emergency funds, and develop lasting financial habits.",
+      "syllabus": [
+        "Introduction to Budgeting",
+        "Tracking Income and Expenses",
+        "Creating Your First Budget",
+        "Needs vs. Wants",
+        "Emergency Funds",
+        "Setting Financial Goals",
+        "Reducing Expenses",
+        "Automating Savings",
+        "Tracking Progress and Adjusting Budget",
+        "Developing a Saving Mindset"
+      ],
+      "lessons": 10,
+      "quizzes": 20,
+      "articles": 10
+    },
+    {
+      "title": "Investing 101",
+      "slug": "investing-101",
+      "level": "Beginner",
+      "duration": "6 weeks",
+      "topics": ["Investing", "Risk Management"],
+      "summary": "Discover the basics of investing, from understanding different investment vehicles to building a balanced portfolio.",
+      "syllabus": [
+        "Investment Fundamentals",
+        "Types of Investments",
+        "Risk and Return",
+        "Building a Portfolio",
+        "Market Analysis",
+        "Investment Strategies",
+        "Common Pitfalls",
+        "Long-term Planning"
+      ]
+    },
+    {
+      "title": "Credit Smart",
+      "slug": "credit-smart",
+      "level": "Beginner",
+      "duration": "3 weeks",
+      "topics": ["Credit", "Debt Management"],
+      "summary": "Master the essentials of credit management, from building credit to understanding credit scores and responsible borrowing.",
+      "syllabus": [
+        "Credit Basics",
+        "Understanding Credit Scores",
+        "Building Credit",
+        "Credit Cards",
+        "Loans and Interest",
+        "Debt Management",
+        "Credit Reports",
+        "Identity Protection"
+      ]
+    },
+    {
+      "title": "ETF Basics",
+      "slug": "etf-basics",
+      "level": "Intermediate",
+      "duration": "4 weeks",
+      "topics": ["Investing", "ETFs"],
+      "summary": "Learn about Exchange-Traded Funds (ETFs), their benefits, and how to incorporate them into your investment strategy.",
+      "syllabus": [
+        "ETF Fundamentals",
+        "Types of ETFs",
+        "ETF vs Mutual Funds",
+        "Portfolio Construction",
+        "Trading Strategies",
+        "Cost Analysis",
+        "Risk Management",
+        "Advanced Topics"
+      ]
+    },
+    {
+      "title": "Building Your First Budget",
+      "slug": "first-budget",
+      "level": "Beginner",
+      "duration": "2 weeks",
+      "topics": ["Budgeting", "Planning"],
+      "summary": "A hands-on workshop to create your first budget from scratch, with personalized guidance and practical exercises.",
+      "syllabus": [
+        "Financial Assessment",
+        "Income Planning",
+        "Expense Categories",
+        "Goal Setting",
+        "Budget Creation",
+        "Tracking Methods",
+        "Budget Review",
+        "Next Steps"
+      ]
+    }
+  ]
+}
+

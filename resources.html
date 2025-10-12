@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources - FutureFunds</title>
+  <meta name="description" content="Access free financial resources including budget templates, investment guides, and financial planning tools.">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/images/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main" class="visually-hidden">Skip to main content</a>
+  
+  <!-- Navigation -->
+  <nav class="nav" role="navigation">
+    <div class="container nav__container">
+      <a href="/" class="nav__logo">FutureFunds</a>
+      
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span class="visually-hidden">Menu</span>
+        <svg width="24" height="24" aria-hidden="true">
+          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      
+      <ul class="nav__menu" id="nav-menu">
+        <li><a href="/programs.html" class="nav__link">Programs</a></li>
+        <li><a href="/courses.html" class="nav__link">Courses</a></li>
+        <li><a href="/resources.html" class="nav__link" aria-current="page">Resources</a></li>
+        <li><a href="/events.html" class="nav__link">Events</a></li>
+        <li><a href="/about.html" class="nav__link">About</a></li>
+        <li><a href="/donate.html" class="nav__link nav__link--donate">Donate</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <main id="main">
+    <!-- Header -->
+    <header class="section" style="padding-block: var(--space-xl);">
+      <div class="container">
+        <div class="section__header reveal">
+          <h1>Financial Resources</h1>
+          <p class="text-muted">
+            Download free templates, guides, and tools to support your financial journey.
+          </p>
+        </div>
+      </div>
+    </header>
+    
+    <!-- Resource Filters -->
+    <section class="section" style="padding-block: 0;">
+      <div class="container">
+        <div class="card reveal">
+          <div class="form-group">
+            <label for="resource-search" class="label">Search Resources</label>
+            <input type="search" id="resource-search" 
+                   class="input" 
+                   placeholder="Search by title or keyword"
+                   data-filter-search>
+          </div>
+          
+          <div class="cluster" style="margin-top: var(--space-md);">
+            <button class="btn btn--subtle" data-filter-category="all">All</button>
+            <button class="btn btn--subtle" data-filter-category="Budgeting">Budgeting</button>
+            <button class="btn btn--subtle" data-filter-category="Investing">Investing</button>
+            <button class="btn btn--subtle" data-filter-category="Credit">Credit</button>
+            <button class="btn btn--subtle" data-filter-category="Planning">Planning</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Resource Grid -->
+    <section class="section">
+      <div class="container">
+        <div id="resource-grid" class="grid reveal">
+          <!-- Resources are dynamically populated here -->
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="section" style="background-color: var(--ff-surface);">
+    <div class="container">
+      <div class="grid" style="gap: var(--space-xl);">
+        <div>
+          <h2 class="nav__logo">FutureFunds</h2>
+          <p class="text-muted" style="margin-top: var(--space-sm);">
+            Empowering the next generation with financial knowledge and skills.
+          </p>
+        </div>
+        
+        <nav aria-label="Footer Navigation">
+          <div class="grid" style="gap: var(--space-lg);">
+            <div>
+              <h3>Learn</h3>
+              <ul class="stack-sm" style="list-style: none;">
+                <li><a href="/programs.html">Programs</a></li>
+                <li><a href="/courses.html">Courses</a></li>
+                <li><a href="/resources.html">Resources</a></li>
+                <li><a href="/events.html">Events</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3>About</h3>
+              <ul class="stack-sm" style="list-style: none;">
+                <li><a href="/about.html">Our Mission</a></li>
+                <li><a href="/about.html#team">Team</a></li>
+                <li><a href="/volunteer.html">Volunteer</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3>Connect</h3>
+              <ul class="stack-sm" style="list-style: none;">
+                <li><a href="https://twitter.com/futurefunds">Twitter</a></li>
+                <li><a href="https://linkedin.com/company/futurefunds">LinkedIn</a></li>
+                <li><a href="https://instagram.com/futurefunds">Instagram</a></li>
+                <li><a href="/contact.html">Get in Touch</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      
+      <div style="margin-top: var(--space-2xl); text-align: center;">
+        <p class="text-muted">
+          © 2025 FutureFunds. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script type="module" src="/assets/js/main.js"></script>
+  
+  <script type="module">
+    // Resource filtering and rendering
+    const searchInput = document.getElementById('resource-search');
+    const categoryButtons = document.querySelectorAll('[data-filter-category]');
+    const resourceGrid = document.getElementById('resource-grid');
+    
+    let resources = [];
+    let activeCategory = 'all';
+    let searchTerm = '';
+    
+    // Fetch resources
+    fetch('/assets/data/resources.json')
+      .then(response => response.json())
+      .then(data => {
+        resources = data.resources;
+        renderResources();
+      })
+      .catch(error => console.error('Error loading resources:', error));
+    
+    // Filter resources
+    function filterResources() {
+      return resources.filter(resource => {
+        const matchesCategory = activeCategory === 'all' || resource.category === activeCategory;
+        const matchesSearch = !searchTerm || 
+          resource.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          resource.description.toLowerCase().includes(searchTerm.toLowerCase());
+        
+        return matchesCategory && matchesSearch;
+      });
+    }
+    
+    // Render resource card
+    function createResourceCard(resource) {
+      const fileIcon = {
+        pdf: `<svg width="24" height="24" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" fill="none" stroke="currentColor" stroke-width="2"/>
+                <polyline points="14 2 14 8 20 8" fill="none" stroke="currentColor" stroke-width="2"/>
+                <text x="8" y="19" font-size="8" fill="currentColor">PDF</text>
+              </svg>`,
+        xlsx: `<svg width="24" height="24" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" fill="none" stroke="currentColor" stroke-width="2"/>
+                <polyline points="14 2 14 8 20 8" fill="none" stroke="currentColor" stroke-width="2"/>
+                <text x="8" y="19" font-size="8" fill="currentColor">XLS</text>
+              </svg>`
+      };
+      
+      return `
+        <article class="card" id="${resource.id}">
+          <div class="stack">
+            <div class="cluster" style="justify-content: space-between;">
+              <span class="badge">${resource.category}</span>
+              <span class="text-muted">${resource.fileType.toUpperCase()}</span>
+            </div>
+            
+            <h2>${resource.title}</h2>
+            <p>${resource.description}</p>
+            
+            <div class="cluster" style="margin-top: auto; justify-content: space-between;">
+              <span class="text-muted" style="font-size: 0.875rem;">
+                ${resource.size} • Updated ${new Date(resource.lastUpdated).toLocaleDateString()}
+              </span>
+              
+              <a href="${resource.href}" class="btn btn--primary cluster">
+                ${fileIcon[resource.fileType.toLowerCase()]}
+                <span style="margin-left: var(--space-xs);">Download</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+    
+    // Render filtered resources
+    function renderResources() {
+      const filteredResources = filterResources();
+      resourceGrid.innerHTML = filteredResources.map(createResourceCard).join('');
+      
+      // Update active category button
+      categoryButtons.forEach(button => {
+        button.classList.toggle('is-active', 
+          button.dataset.filterCategory === activeCategory);
+      });
+      
+      // Announce results to screen readers
+      const announcement = document.getElementById('filter-announcement');
+      if (announcement) {
+        announcement.textContent = `${filteredResources.length} resources found`;
+      }
+    }
+    
+    // Event listeners
+    searchInput.addEventListener('input', (e) => {
+      searchTerm = e.target.value;
+      renderResources();
+    });
+    
+    categoryButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        activeCategory = button.dataset.filterCategory;
+        renderResources();
+      });
+    });
+  </script>
+</body>
+</html>

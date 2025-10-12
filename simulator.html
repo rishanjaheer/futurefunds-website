@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investment Simulator - FutureFunds</title>
+  <meta name="description" content="Coming Soon: Practice investing in a risk-free environment with our interactive investment simulator. Learn market dynamics through hands-on experience.">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/images/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main" class="visually-hidden">Skip to main content</a>
+  
+  <!-- Navigation -->
+  <nav class="nav" role="navigation">
+    <div class="container nav__container">
+      <a href="/" class="nav__logo">FutureFunds</a>
+      
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span class="visually-hidden">Menu</span>
+        <svg width="24" height="24" aria-hidden="true">
+          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      
+      <ul class="nav__menu" id="nav-menu">
+        <li><a href="/programs.html" class="nav__link">Programs</a></li>
+        <li><a href="/courses.html" class="nav__link">Courses</a></li>
+        <li><a href="/resources.html" class="nav__link">Resources</a></li>
+        <li><a href="/events.html" class="nav__link">Events</a></li>
+        <li><a href="/about.html" class="nav__link">About</a></li>
+        <li><a href="/donate.html" class="nav__link nav__link--donate">Donate</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <main id="main">
+    <!-- Coming Soon Banner -->
+    <section class="section" style="padding-block: var(--space-xl);">
+      <div class="container">
+        <div class="card reveal" style="text-align: center;">
+          <span class="badge">Coming Soon</span>
+          <h1 style="margin-top: var(--space-md);">Investment Simulator</h1>
+          <p class="text-muted" style="font-size: 1.25rem; max-width: 65ch; margin: var(--space-md) auto;">
+            Practice investing in a risk-free environment. Learn market dynamics, test strategies, and build confidence through hands-on experience.
+          </p>
+          
+          <form class="notify-form stack" style="max-width: var(--container-sm); margin: var(--space-xl) auto;">
+            <div class="form-group">
+              <label for="notify-email" class="label">Get Early Access</label>
+              <div class="cluster">
+                <input type="email" 
+                       id="notify-email" 
+                       name="email" 
+                       class="input" 
+                       placeholder="Enter your email address"
+                       required
+                       style="flex: 1;">
+                <button type="submit" class="btn btn--primary">
+                  Notify Me
+                </button>
+              </div>
+              <p class="text-muted" style="font-size: 0.875rem; margin-top: var(--space-xs);">
+                Be the first to know when we launch. No spam, just updates.
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Features -->
+    <section class="section">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__eyebrow">Features</span>
+          <h2>What to Expect</h2>
+        </header>
+        
+        <div class="grid reveal">
+          <div class="card">
+            <h3>Paper Trading</h3>
+            <ul class="stack-sm">
+              <li>Virtual portfolio with $100,000 starting capital</li>
+              <li>Real-time market data</li>
+              <li>Trade stocks, ETFs, and mutual funds</li>
+              <li>Performance tracking and analytics</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>Learning Scenarios</h3>
+            <ul class="stack-sm">
+              <li>Guided investment challenges</li>
+              <li>Market condition simulations</li>
+              <li>Risk management exercises</li>
+              <li>Strategy testing environment</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>Analysis Tools</h3>
+            <ul class="stack-sm">
+              <li>Technical indicators</li>
+              <li>Portfolio analytics</li>
+              <li>Risk assessment tools</li>
+              <li>Performance reporting</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Development Timeline -->
+    <section class="section">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__eyebrow">Roadmap</span>
+          <h2>Development Timeline</h2>
+        </header>
+        
+        <div class="card reveal">
+          <div class="stack">
+            <!-- Phase 1 -->
+            <div class="stack-sm">
+              <div class="cluster" style="justify-content: space-between;">
+                <h3>Phase 1: MVP Launch</h3>
+                <span class="badge">Q4 2025</span>
+              </div>
+              <ul>
+                <li>Basic paper trading functionality</li>
+                <li>Core portfolio management features</li>
+                <li>Essential market data integration</li>
+                <li>Fundamental user experience</li>
+              </ul>
+            </div>
+            
+            <!-- Phase 2 -->
+            <div class="stack-sm">
+              <div class="cluster" style="justify-content: space-between;">
+                <h3>Phase 2: Beta Release</h3>
+                <span class="badge">Q1 2026</span>
+              </div>
+              <ul>
+                <li>Advanced trading features</li>
+                <li>Learning scenarios implementation</li>
+                <li>Enhanced analytics tools</li>
+                <li>Community features</li>
+              </ul>
+            </div>
+            
+            <!-- Phase 3 -->
+            <div class="stack-sm">
+              <div class="cluster" style="justify-content: space-between;">
+                <h3>Phase 3: Public Launch</h3>
+                <span class="badge">Q2 2026</span>
+              </div>
+              <ul>
+                <li>Full feature set deployment</li>
+                <li>Mobile app release</li>
+                <li>Integration with learning platform</li>
+                <li>Competition system</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Educational Integration -->
+    <section class="section">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__eyebrow">Learning Journey</span>
+          <h2>Educational Integration</h2>
+        </header>
+        
+        <div class="grid reveal">
+          <div class="card">
+            <h3>Course Connection</h3>
+            <p>The simulator will integrate with our investment courses, providing hands-on practice for concepts learned in:</p>
+            <ul class="stack-sm" style="margin-top: var(--space-md);">
+              <li><a href="/course-investing-101.html">Investing 101</a></li>
+              <li><a href="/course-etf-basics.html">ETF Basics</a></li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>Guided Learning</h3>
+            <p>Interactive tutorials and challenges help you:</p>
+            <ul class="stack-sm" style="margin-top: var(--space-md);">
+              <li>Understand market mechanics</li>
+              <li>Learn trading strategies</li>
+              <li>Practice risk management</li>
+              <li>Analyze investment outcomes</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>Progress Tracking</h3>
+            <p>Monitor your development through:</p>
+            <ul class="stack-sm" style="margin-top: var(--space-md);">
+              <li>Performance metrics</li>
+              <li>Learning achievements</li>
+              <li>Strategy assessments</li>
+              <li>Portfolio reviews</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- FAQ -->
+    <section class="section">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__eyebrow">Questions</span>
+          <h2>Frequently Asked Questions</h2>
+        </header>
+        
+        <div class="grid reveal">
+          <div class="card">
+            <h3>Is the simulator free to use?</h3>
+            <p>Yes, the simulator will be completely free as part of our mission to provide accessible financial education.</p>
+          </div>
+          
+          <div class="card">
+            <h3>What markets can I trade?</h3>
+            <p>Initially, US stocks, ETFs, and mutual funds. We plan to add more markets and instruments in future updates.</p>
+          </div>
+          
+          <div class="card">
+            <h3>Do I need experience?</h3>
+            <p>No experience needed! The simulator is designed for beginners and includes comprehensive tutorials and guidance.</p>
+          </div>
+          
+          <div class="card">
+            <h3>Can I use it for school?</h3>
+            <p>Yes! We're developing special features for educators to integrate the simulator into their curriculum.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="section" style="background-color: var(--ff-surface);">
+    <div class="container">
+      <div class="grid" style="gap: var(--space-xl);">
+        <div>
+          <h2 class="nav__logo">FutureFunds</h2>
+          <p class="text-muted" style="margin-top: var(--space-sm);">
+            Empowering the next generation with financial knowledge and skills.
+          </p>
+        </div>
+        
+        <nav aria-label="Footer Navigation">
+          <div class="grid" style="gap: var(--space-lg);">
+            <div>
+              <h3>Learn</h3>
+              <ul class="stack-sm" style="list-style: none;">
+                <li><a href="/programs.html">Programs</a></li>
+                <li><a href="/courses.html">Courses</a></li>
+                <li><a href="/resources.html">Resources</a></li>
+                <li><a href="/events.html">Events</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3>About</h3>
+              <ul class="stack-sm" style="list-style: none;">
+                <li><a href="/about.html">Our Mission</a></li>
+                <li><a href="/about.html#team">Team</a></li>
+                <li><a href="/volunteer.html">Volunteer</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3>Connect</h3>
+              <ul class="stack-sm" style="list-style: none;">
+                <li><a href="https://twitter.com/futurefunds">Twitter</a></li>
+                <li><a href="https://linkedin.com/company/futurefunds">LinkedIn</a></li>
+                <li><a href="https://instagram.com/futurefunds">Instagram</a></li>
+                <li><a href="/contact.html">Get in Touch</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      
+      <div style="margin-top: var(--space-2xl); text-align: center;">
+        <p class="text-muted">
+          © 2025 FutureFunds. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script type="module" src="/assets/js/main.js"></script>
+  <script type="module" src="/assets/js/validate.js"></script>
+  
+  <script type="module">
+    import FormValidator from '/assets/js/validate.js';
+    import { createToast } from '/assets/js/main.js';
+    
+    // Initialize form validation
+    const form = document.querySelector('.notify-form');
+    
+    const validator = new FormValidator(form, {
+      email: {
+        required: true,
+        email: true
+      }
+    });
+    
+    // Handle form submission
+    form.addEventListener('form:valid', (e) => {
+      const data = e.detail;
+      
+      // Store email in localStorage
+      const notifyList = JSON.parse(localStorage.getItem('notifyList') || '[]');
+      notifyList.push({
+        email: data.email,
+        timestamp: Date.now(),
+        source: 'simulator'
+      });
+      localStorage.setItem('notifyList', JSON.stringify(notifyList));
+      
+      createToast('Thanks! We\'ll notify you when the simulator launches.');
+      form.reset();
+    });
+  </script>
+</body>
+</html>
