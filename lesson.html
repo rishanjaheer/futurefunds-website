@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Investing 101 - 10 Lessons - FutureFunds</title>
-  <meta name="description" content="Master investing fundamentals with our comprehensive 10-lesson course. Learn about stocks, bonds, mutual funds, risk management, and building a diversified portfolio.">
+  <title>Lesson - Budgeting & Saving - FutureFunds</title>
+  <meta name="description" content="Interactive lesson viewer for the Budgeting & Saving course">
   
   <!-- Styles -->
   <link rel="stylesheet" href="/assets/css/styles.css">
@@ -16,30 +16,85 @@
   <link rel="manifest" href="/manifest.json">
 </head>
 <body>
-  <!-- Navigation (unchanged) -->
+  <!-- Skip Link -->
+  <a href="#main" class="visually-hidden">Skip to main content</a>
+  
+  <!-- Navigation -->
   <nav class="nav" role="navigation">
     <div class="container nav__container">
       <a href="/" class="nav__logo">FutureFunds</a>
+
       <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
         <span class="visually-hidden">Menu</span>
         <svg width="24" height="24" aria-hidden="true">
           <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
       </button>
+
       <ul class="nav__menu" id="nav-menu">
-        <li><a href="/programs.html" class="nav__link">Programs</a></li>
-        <li><a href="/courses.html" class="nav__link">Courses</a></li>
-        <li><a href="/resources.html" class="nav__link">Resources</a></li>
-        <li><a href="/events.html" class="nav__link">Events</a></li>
-        <li><a href="/about.html" class="nav__link">About</a></li>
-        <li><a href="/donate.html" class="nav__link nav__link--donate">Donate</a></li>
+        <li class="nav__item has-dropdown">
+          <button class="nav__link">
+            Programs
+            <svg class="nav__arrow" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="nav__dropdown">
+            <ul class="nav__dropdown-menu">
+              <li><a href="/programs.html#seminars" class="nav__dropdown-link">Seminars</a></li>
+              <li><a href="/programs.html#workshops" class="nav__dropdown-link">Workshops</a></li>
+              <li><a href="/programs.html#competitions" class="nav__dropdown-link">Competitions</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav__item has-dropdown">
+          <button class="nav__link">
+            Courses
+            <svg class="nav__arrow" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="nav__dropdown">
+            <ul class="nav__dropdown-menu">
+              <li><a href="/course-budgeting-101.html" class="nav__dropdown-link">Budgeting 101</a></li>
+              <li><a href="/course-investing-101.html" class="nav__dropdown-link">Investing 101</a></li>
+              <li><a href="/course-credit-smart.html" class="nav__dropdown-link">Credit Smart</a></li>
+              <li><a href="/courses.html" class="nav__dropdown-link">View All Courses</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav__item has-dropdown">
+          <button class="nav__link">
+            Resources
+            <svg class="nav__arrow" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="nav__dropdown">
+            <ul class="nav__dropdown-menu">
+              <li><a href="/resources.html#guides" class="nav__dropdown-link">Financial Guides</a></li>
+              <li><a href="/resources.html#calculators" class="nav__dropdown-link">Calculators</a></li>
+              <li><a href="/resources.html#templates" class="nav__dropdown-link">Templates</a></li>
+              <li><a href="/resources.html" class="nav__dropdown-link">All Resources</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav__item">
+          <a href="/events.html" class="nav__link">Events</a>
+        </li>
+        <li class="nav__item">
+          <a href="/about.html" class="nav__link">About</a>
+        </li>
+        <li class="nav__item nav__item--cta">
+          <a href="/donate.html" class="nav__link nav__link--donate">Donate</a>
+        </li>
       </ul>
     </div>
   </nav>
   
   <main id="main">
     <!-- Course Header -->
-    <header class="section" style="padding-block: var(--space-xl);">
+    <header class="section" style="padding-block: var(--space-lg);">
       <div class="container">
         <div class="reveal">
           <!-- Breadcrumb -->
@@ -50,200 +105,90 @@
                 <span class="text-muted" aria-hidden="true">/</span>
               </li>
               <li>
-                <span aria-current="page">Investing 101</span>
+                <a href="/course-budgeting-101.html" class="text-muted">Budgeting & Saving</a>
+                <span class="text-muted" aria-hidden="true">/</span>
+              </li>
+              <li>
+                <span aria-current="page" id="lesson-breadcrumb">Lesson 1</span>
               </li>
             </ol>
           </nav>
-          <!-- Course Info -->
-          <div class="stack">
-            <div class="cluster">
-              <span class="badge">Beginner</span>
-              <span class="text-muted">10 Lessons</span>
-              <span class="text-muted">•</span>
-              <span class="text-muted">Self-Paced</span>
+          
+          <!-- Progress Bar -->
+          <div class="progress-container" style="margin-bottom: var(--space-lg);">
+            <div class="progress-bar">
+              <div class="progress-fill" id="progress-fill"></div>
             </div>
-            <h1>Investing 101</h1>
-            <p class="text-muted" style="max-width: 65ch;">
-              Master the fundamentals of investing with our comprehensive 10-lesson course. Learn about stocks, bonds, mutual funds, ETFs, risk management, and building a diversified portfolio that will help you grow your wealth over time.
-            </p>
-            
-            <!-- FIXED HTML BUTTON -->
-            <div class="cluster" style="margin-top: var(--space-md);">
-              <a href="/lesson.html?course=investing-101&lesson=1" class="btn btn--primary">
-                Start Course
-              </a>
-              <a href="/resources.html#investing-guide" class="btn btn--secondary">
-                Download Materials
-              </a>
-            </div>
+            <span class="progress-text" id="progress-text">Lesson 1 of 10</span>
           </div>
         </div>
       </div>
     </header>
     
-    <!-- Course Content -->
+    <!-- Lesson Content -->
     <section class="section">
       <div class="container">
-        <div class="grid" style="gap: var(--space-2xl);">
-          <!-- Main Content -->
-          <div class="stack reveal">
-            <!-- Learning Outcomes -->
-            <div class="card">
-              <h2>What You'll Learn</h2>
-              <ul class="stack-sm">
-                <li>Master the fundamentals of investing and why it matters</li>
-                <li>Understand different types of investments: stocks, bonds, and more</li>
-                <li>Learn the importance of saving and compound interest</li>
-                <li>Grasp the relationship between risk and return</li>
-                <li>Build a diversified portfolio through asset allocation</li>
-                <li>Compare mutual funds and ETFs for optimal investing</li>
-                <li>Navigate stock market basics and market indices</li>
-                <li>Explore key investment strategies for long-term success</li>
-                <li>Analyze investments using fundamental and technical analysis</li>
-                <li>Implement risk management strategies to protect your wealth</li>
-              </ul>
+        <div class="lesson-viewer">
+          <!-- Lesson Navigation -->
+          <div class="lesson-nav">
+            <button class="btn btn--secondary" id="prev-btn" disabled>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Previous
+            </button>
+            
+            <div class="lesson-selector">
+              <select id="lesson-select" class="select">
+                <option value="1">Lesson 1: Introduction to Budgeting</option>
+                <option value="2">Lesson 2: Tracking Income and Expenses</option>
+                <option value="3">Lesson 3: Creating Your First Budget</option>
+                <option value="4">Lesson 4: Needs vs. Wants</option>
+                <option value="5">Lesson 5: Emergency Funds</option>
+                <option value="6">Lesson 6: Setting Financial Goals</option>
+                <option value="7">Lesson 7: Reducing Expenses</option>
+                <option value="8">Lesson 8: Automating Savings</option>
+                <option value="9">Lesson 9: Tracking Progress and Adjusting Budget</option>
+                <option value="10">Lesson 10: Developing a Saving Mindset</option>
+              </select>
             </div>
             
-            <!-- Course Outline (trimmed for brevity, add more lessons as needed) -->
-            <div class="card">
-              <h2>Course Lessons</h2>
-              <p class="text-muted" style="margin-bottom: var(--space-lg);">10 comprehensive lessons with pre-quizzes, articles, and post-quizzes</p>
-              <div class="stack">
-                <details class="lesson-detail">
-                  <summary class="lesson-summary">
-                    <div class="lesson-header">
-                      <span class="lesson-number">01</span>
-                      <div class="lesson-info">
-                        <h3>Introduction to Investing</h3>
-                        <p class="text-muted">What is investing and why it matters</p>
-                      </div>
-                    </div>
-                  </summary>
-                  <div class="lesson-content">
-                    <div class="lesson-components">
-                      <div class="component">
-                        <span class="component-type">Article</span>
-                        <span>What Is Investing? - Investopedia</span>
-                      </div>
-                      <div class="component">
-                        <span class="component-type">Pre-Quiz</span>
-                        <span>5 Questions</span>
-                      </div>
-                      <div class="component">
-                        <span class="component-type">Post-Quiz</span>
-                        <span>5 Questions</span>
-                      </div>
-                    </div>
-                  </div>
-                </details>
-                <!-- Repeat details for lessons 2-10 -->
+            <button class="btn btn--primary" id="next-btn">
+              Next
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+          
+          <!-- Main Content Area -->
+          <div class="lesson-content-area">
+            <div class="card" style="padding: var(--space-2xl);">
+              <div id="lesson-content">
+                <!-- Content will be loaded here -->
               </div>
             </div>
           </div>
-          
-          <!-- Sidebar -->
-          <aside class="stack">
-            <!-- Resources -->
-            <div class="card reveal">
-              <h2>Course Resources</h2>
-              <ul class="stack-sm" style="list-style: none;">
-                <li>
-                  <a href="/downloads/investing-guide.pdf" class="cluster">
-                    Investing Guide (PDF)
-                  </a>
-                </li>
-                <li>
-                  <a href="/downloads/investment-calculator.xlsx" class="cluster">
-                    Investment Calculator
-                  </a>
-                </li>
-                <li>
-                  <a href="/downloads/stock-analysis.xlsx" class="cluster">
-                    Stock Analysis Template
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <!-- Progress Tracking -->
-            <div class="card reveal">
-              <h2>Progress Tracking</h2>
-              <p class="text-muted">Coming Soon</p>
-              <p>Track your progress, complete exercises, and earn certificates as you master investment fundamentals.</p>
-            </div>
-            <!-- Related Courses -->
-            <div class="card reveal">
-              <h2>Related Courses</h2>
-              <ul class="stack-sm" style="list-style: none;">
-                <li>
-                  <a href="/course-investing-101.html">Investing 101</a>
-                </li>
-                <li>
-                  <a href="/course-etf-basics.html">ETF Basics</a>
-                </li>
-              </ul>
-            </div>
-            <!-- Investment Simulator -->
-            <div class="card reveal">
-              <h2>Practice Investing</h2>
-              <p>Put your knowledge to the test with our upcoming investment simulator.</p>
-              <a href="/simulator.html" class="btn btn--secondary" style="margin-top: var(--space-sm);">
-                Learn More
-              </a>
-            </div>
-          </aside>
         </div>
       </div>
     </section>
   </main>
   
-  <!-- Footer (unchanged) -->
+  <!-- Footer -->
   <footer class="section" style="background-color: var(--ff-surface);">
     <div class="container">
-      <div class="grid" style="gap: var(--space-xl);">
-        <div>
-          <h2 class="nav__logo">FutureFunds</h2>
-          <p class="text-muted" style="margin-top: var(--space-sm);">
-            Empowering the next generation with financial knowledge and skills.
-          </p>
-        </div>
-        <nav aria-label="Footer Navigation">
-          <div class="grid" style="gap: var(--space-lg);">
-            <div>
-              <h3>Learn</h3>
-              <ul class="stack-sm" style="list-style: none;">
-                <li><a href="/programs.html">Programs</a></li>
-                <li><a href="/courses.html">Courses</a></li>
-                <li><a href="/resources.html">Resources</a></li>
-                <li><a href="/events.html">Events</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3>About</h3>
-              <ul class="stack-sm" style="list-style: none;">
-                <li><a href="/about.html">Our Mission</a></li>
-                <li><a href="/about.html#team">Team</a></li>
-                <li><a href="/volunteer.html">Volunteer</a></li>
-                <li><a href="/contact.html">Contact</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3>Connect</h3>
-              <ul class="stack-sm" style="list-style: none;">
-                <li><a href="https://twitter.com/futurefunds">Twitter</a></li>
-                <li><a href="https://linkedin.com/company/futurefunds">LinkedIn</a></li>
-                <li><a href="https://instagram.com/futurefunds">Instagram</a></li>
-                <li><a href="/contact.html">Get in Touch</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-      <div style="margin-top: var(--space-2xl); text-align: center;">
+      <div class="text-center">
         <p class="text-muted">
           © 2025 FutureFunds. All rights reserved.
         </p>
       </div>
     </div>
   </footer>
+  
+  <!-- Scripts -->
+  <script type="module" src="/assets/js/main.js"></script>
+  <script type="module" src="/assets/js/nav.js"></script>
+  <script type="module" src="/assets/js/progress-tracker.js"></script>
+  <script type="module" src="/assets/js/lesson-viewer.js"></script>
 </body>
 </html>
