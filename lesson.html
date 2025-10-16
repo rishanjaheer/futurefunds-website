@@ -1,194 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lesson - Budgeting & Saving - FutureFunds</title>
-  <meta name="description" content="Interactive lesson viewer for the Budgeting & Saving course">
-  
-  <!-- Styles -->
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  
-  <!-- Favicon -->
-  <link rel="icon" href="/assets/images/favicon.ico" sizes="any">
-  <link rel="icon" href="/assets/images/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
-  <link rel="manifest" href="/manifest.json">
-</head>
-<body>
-  <!-- Skip Link -->
-  <a href="#main" class="visually-hidden">Skip to main content</a>
-  
-  <!-- Navigation -->
-  <nav class="nav" role="navigation">
-    <div class="container nav__container">
-      <a href="/" class="nav__logo">FutureFunds</a>
+// --- Dynamic Lesson Viewer for FutureFunds ---
+// Supports multiple courses and dynamically loads content based on ?course=...&lesson=...
 
-      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
-        <span class="visually-hidden">Menu</span>
-        <svg width="24" height="24" aria-hidden="true">
-          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </button>
+// 1. Define your courses and lessons here:
+const courses = {
+  "budgeting-101": {
+    name: "Budgeting & Saving",
+    lessons: [
+      { title: "Introduction to Budgeting", description: "What is a budget and why it matters" },
+      { title: "Tracking Income and Expenses", description: "How to record your income and spending" },
+      { title: "Creating Your First Budget", description: "Step-by-step personal budgeting" },
+      { title: "Needs vs. Wants", description: "Differentiating essential vs. discretionary spending" },
+      { title: "Emergency Funds", description: "Importance of saving for unexpected expenses" },
+      { title: "Setting Financial Goals", description: "Short-term vs. long-term goals" },
+      { title: "Reducing Expenses", description: "Strategies to cut costs and optimize spending" },
+      { title: "Automating Savings", description: "Using technology to save automatically" },
+      { title: "Tracking Progress and Adjusting Budget", description: "Monitoring spending and revising your budget" },
+      { title: "Developing a Saving Mindset", description: "Cultivating habits for long-term saving" },
+    ]
+  },
+  "investing-101": {
+    name: "Investing 101",
+    lessons: [
+      { title: "Introduction to Investing", description: "What is investing and why it matters" },
+      { title: "Types of Investments", description: "Stocks, bonds, mutual funds, and more" },
+      { title: "The Importance of Saving and Compound Interest", description: "Building wealth through time and patience" },
+      { title: "Risk and Return", description: "Understanding the risk-reward relationship" },
+      { title: "Diversification and Asset Allocation", description: "Building a balanced portfolio" },
+      { title: "Mutual Funds and ETFs", description: "Comparing fund types and their benefits" },
+      { title: "Stock Market Basics", description: "How stock markets work" },
+      { title: "Investment Strategies", description: "Value, growth, and momentum investing" },
+      { title: "Analyzing Investments", description: "Fundamental and technical analysis" },
+      { title: "Risk Management in Investing", description: "Protecting your portfolio" },
+    ]
+  }
+  // Add new courses here using the same structure!
+};
 
-      <ul class="nav__menu" id="nav-menu">
-        <li class="nav__item has-dropdown">
-          <button class="nav__link">
-            Programs
-            <svg class="nav__arrow" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          <div class="nav__dropdown">
-            <ul class="nav__dropdown-menu">
-              <li><a href="/programs.html#seminars" class="nav__dropdown-link">Seminars</a></li>
-              <li><a href="/programs.html#workshops" class="nav__dropdown-link">Workshops</a></li>
-              <li><a href="/programs.html#competitions" class="nav__dropdown-link">Competitions</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav__item has-dropdown">
-          <button class="nav__link">
-            Courses
-            <svg class="nav__arrow" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          <div class="nav__dropdown">
-            <ul class="nav__dropdown-menu">
-              <li><a href="/course-budgeting-101.html" class="nav__dropdown-link">Budgeting 101</a></li>
-              <li><a href="/course-investing-101.html" class="nav__dropdown-link">Investing 101</a></li>
-              <li><a href="/course-credit-smart.html" class="nav__dropdown-link">Credit Smart</a></li>
-              <li><a href="/courses.html" class="nav__dropdown-link">View All Courses</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav__item has-dropdown">
-          <button class="nav__link">
-            Resources
-            <svg class="nav__arrow" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          <div class="nav__dropdown">
-            <ul class="nav__dropdown-menu">
-              <li><a href="/resources.html#guides" class="nav__dropdown-link">Financial Guides</a></li>
-              <li><a href="/resources.html#calculators" class="nav__dropdown-link">Calculators</a></li>
-              <li><a href="/resources.html#templates" class="nav__dropdown-link">Templates</a></li>
-              <li><a href="/resources.html" class="nav__dropdown-link">All Resources</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav__item">
-          <a href="/events.html" class="nav__link">Events</a>
-        </li>
-        <li class="nav__item">
-          <a href="/about.html" class="nav__link">About</a>
-        </li>
-        <li class="nav__item nav__item--cta">
-          <a href="/donate.html" class="nav__link nav__link--donate">Donate</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  
-  <main id="main">
-    <!-- Course Header -->
-    <header class="section" style="padding-block: var(--space-lg);">
-      <div class="container">
-        <div class="reveal">
-          <!-- Breadcrumb -->
-          <nav aria-label="Breadcrumb" class="cluster" style="margin-bottom: var(--space-md);">
-            <ol class="cluster" style="list-style: none; padding: 0;">
-              <li>
-                <a href="/courses.html" class="text-muted">Courses</a>
-                <span class="text-muted" aria-hidden="true">/</span>
-              </li>
-              <li>
-                <a href="/course-budgeting-101.html" class="text-muted">Budgeting & Saving</a>
-                <span class="text-muted" aria-hidden="true">/</span>
-              </li>
-              <li>
-                <span aria-current="page" id="lesson-breadcrumb">Lesson 1</span>
-              </li>
-            </ol>
-          </nav>
-          
-          <!-- Progress Bar -->
-          <div class="progress-container" style="margin-bottom: var(--space-lg);">
-            <div class="progress-bar">
-              <div class="progress-fill" id="progress-fill"></div>
-            </div>
-            <span class="progress-text" id="progress-text">Lesson 1 of 10</span>
-          </div>
-        </div>
-      </div>
-    </header>
-    
-    <!-- Lesson Content -->
-    <section class="section">
-      <div class="container">
-        <div class="lesson-viewer">
-          <!-- Lesson Navigation -->
-          <div class="lesson-nav">
-            <button class="btn btn--secondary" id="prev-btn" disabled>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              Previous
-            </button>
-            
-            <div class="lesson-selector">
-              <select id="lesson-select" class="select">
-                <option value="1">Lesson 1: Introduction to Budgeting</option>
-                <option value="2">Lesson 2: Tracking Income and Expenses</option>
-                <option value="3">Lesson 3: Creating Your First Budget</option>
-                <option value="4">Lesson 4: Needs vs. Wants</option>
-                <option value="5">Lesson 5: Emergency Funds</option>
-                <option value="6">Lesson 6: Setting Financial Goals</option>
-                <option value="7">Lesson 7: Reducing Expenses</option>
-                <option value="8">Lesson 8: Automating Savings</option>
-                <option value="9">Lesson 9: Tracking Progress and Adjusting Budget</option>
-                <option value="10">Lesson 10: Developing a Saving Mindset</option>
-              </select>
-            </div>
-            
-            <button class="btn btn--primary" id="next-btn">
-              Next
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-          </div>
-          
-          <!-- Main Content Area -->
-          <div class="lesson-content-area">
-            <div class="card" style="padding: var(--space-2xl);">
-              <div id="lesson-content">
-                <!-- Content will be loaded here -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  
-  <!-- Footer -->
-  <footer class="section" style="background-color: var(--ff-surface);">
-    <div class="container">
-      <div class="text-center">
-        <p class="text-muted">
-          © 2025 FutureFunds. All rights reserved.
-        </p>
-      </div>
-    </div>
-  </footer>
-  
-  <!-- Scripts -->
-  <script type="module" src="/assets/js/main.js"></script>
-  <script type="module" src="/assets/js/nav.js"></script>
-  <script type="module" src="/assets/js/progress-tracker.js"></script>
-  <script type="module" src="/assets/js/lesson-viewer.js"></script>
-</body>
-</html>
+// 2. Utility: Get query parameter from URL
+function getQueryParam(name) {
+  const params = new URLSearchParams(window.location.search);
+  return params.get(name);
+}
+
+// 3. Determine active course and lesson
+const courseKey = getQueryParam("course") || "budgeting-101";
+const course = courses[courseKey] || courses["budgeting-101"];
+const lessons = course.lessons;
+const lessonCount = lessons.length;
+const lessonIndex = Math.max(0, ((parseInt(getQueryParam("lesson"), 10) || 1) - 1));
+const currentLesson = lessons[lessonIndex] || lessons[0];
+
+// 4. Populate lesson selector dropdown
+const lessonSelect = document.getElementById("lesson-select");
+if (lessonSelect) {
+  lessonSelect.innerHTML = lessons
+    .map((lesson, idx) =>
+      `<option value="${idx + 1}" ${idx === lessonIndex ? "selected" : ""}>
+        Lesson ${idx + 1}: ${lesson.title}
+      </option>`
+    ).join("");
+  // On change, reload with selected lesson & course
+  lessonSelect.addEventListener("change", (e) => {
+    window.location.href = `${window.location.pathname}?course=${courseKey}&lesson=${e.target.value}`;
+  });
+}
+
+// 5. Update breadcrumb with current lesson
+const breadcrumb = document.getElementById("lesson-breadcrumb");
+if (breadcrumb) {
+  breadcrumb.textContent = `Lesson ${lessonIndex + 1}: ${currentLesson.title}`;
+}
+
+// 6. Update progress bar
+const progressText = document.getElementById("progress-text");
+if (progressText) {
+  progressText.textContent = `Lesson ${lessonIndex + 1} of ${lessonCount}`;
+}
+const progressFill = document.getElementById("progress-fill");
+if (progressFill) {
+  progressFill.style.width = `${((lessonIndex + 1) / lessonCount) * 100}%`;
+}
+
+// 7. Render lesson content area (customize as needed!)
+const lessonContent = document.getElementById("lesson-content");
+if (lessonContent) {
+  lessonContent.innerHTML = `
+    <h2>${currentLesson.title}</h2>
+    <p class="text-muted">${currentLesson.description}</p>
+    <p>(Add lesson article, pre-quiz, post-quiz, etc. here...)</p>
+  `;
+}
+
+// 8. Enable/disable prev/next navigation
+const prevBtn = document.getElementById("prev-btn");
+if (prevBtn) {
+  prevBtn.disabled = lessonIndex === 0;
+  prevBtn.onclick = () => {
+    if (lessonIndex > 0) {
+      window.location.href = `${window.location.pathname}?course=${courseKey}&lesson=${lessonIndex}`;
+    }
+  };
+}
+const nextBtn = document.getElementById("next-btn");
+if (nextBtn) {
+  nextBtn.disabled = lessonIndex === lessonCount - 1;
+  nextBtn.onclick = () => {
+    if (lessonIndex < lessonCount - 1) {
+      window.location.href = `${window.location.pathname}?course=${courseKey}&lesson=${lessonIndex + 2}`;
+    }
+  };
+}
+
+// --- End of Dynamic Lesson Viewer JS ---
