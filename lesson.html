@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lesson - Budgeting & Saving - FutureFunds</title>
-  <meta name="description" content="Interactive lesson viewer for the Budgeting & Saving course">
-  
+  <title>Lesson Viewer - FutureFunds</title>
+  <meta name="description" content="Interactive lesson viewer for FutureFunds courses">
+
   <!-- Styles -->
   <link rel="stylesheet" href="/assets/css/styles.css">
-  
+
   <!-- Favicon -->
   <link rel="icon" href="/assets/images/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/images/icon.svg" type="image/svg+xml">
@@ -18,7 +18,7 @@
 <body>
   <!-- Skip Link -->
   <a href="#main" class="visually-hidden">Skip to main content</a>
-  
+
   <!-- Navigation -->
   <nav class="nav" role="navigation">
     <div class="container nav__container">
@@ -91,7 +91,7 @@
       </ul>
     </div>
   </nav>
-  
+
   <main id="main">
     <!-- Course Header -->
     <header class="section" style="padding-block: var(--space-lg);">
@@ -105,26 +105,27 @@
                 <span class="text-muted" aria-hidden="true">/</span>
               </li>
               <li>
-                <a href="/course-budgeting-101.html" class="text-muted">Budgeting & Saving</a>
+                <!-- This will be set by JS -->
+                <a href="#" class="text-muted" id="course-link"></a>
                 <span class="text-muted" aria-hidden="true">/</span>
               </li>
               <li>
-                <span aria-current="page" id="lesson-breadcrumb">Lesson 1</span>
+                <span aria-current="page" id="lesson-breadcrumb">Lesson</span>
               </li>
             </ol>
           </nav>
-          
+
           <!-- Progress Bar -->
           <div class="progress-container" style="margin-bottom: var(--space-lg);">
             <div class="progress-bar">
               <div class="progress-fill" id="progress-fill"></div>
             </div>
-            <span class="progress-text" id="progress-text">Lesson 1 of 10</span>
+            <span class="progress-text" id="progress-text">Lesson</span>
           </div>
         </div>
       </div>
     </header>
-    
+
     <!-- Lesson Content -->
     <section class="section">
       <div class="container">
@@ -137,22 +138,12 @@
               </svg>
               Previous
             </button>
-            
+
             <div class="lesson-selector">
-              <select id="lesson-select" class="select">
-                <option value="1">Lesson 1: Introduction to Budgeting</option>
-                <option value="2">Lesson 2: Tracking Income and Expenses</option>
-                <option value="3">Lesson 3: Creating Your First Budget</option>
-                <option value="4">Lesson 4: Needs vs. Wants</option>
-                <option value="5">Lesson 5: Emergency Funds</option>
-                <option value="6">Lesson 6: Setting Financial Goals</option>
-                <option value="7">Lesson 7: Reducing Expenses</option>
-                <option value="8">Lesson 8: Automating Savings</option>
-                <option value="9">Lesson 9: Tracking Progress and Adjusting Budget</option>
-                <option value="10">Lesson 10: Developing a Saving Mindset</option>
-              </select>
+              <!-- No hardcoded options! JS will populate. -->
+              <select id="lesson-select" class="select"></select>
             </div>
-            
+
             <button class="btn btn--primary" id="next-btn">
               Next
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -160,7 +151,7 @@
               </svg>
             </button>
           </div>
-          
+
           <!-- Main Content Area -->
           <div class="lesson-content-area">
             <div class="card" style="padding: var(--space-2xl);">
@@ -173,7 +164,7 @@
       </div>
     </section>
   </main>
-  
+
   <!-- Footer -->
   <footer class="section" style="background-color: var(--ff-surface);">
     <div class="container">
@@ -184,7 +175,7 @@
       </div>
     </div>
   </footer>
-  
+
   <!-- Scripts -->
   <script type="module" src="/assets/js/main.js"></script>
   <script type="module" src="/assets/js/nav.js"></script>
