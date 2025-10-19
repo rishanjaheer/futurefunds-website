@@ -6,15 +6,33 @@
 
 /* Custom Properties - Design Tokens */
 :root {
-  /* Colors */
-  --ff-bg: #0D0D0D;
-  --ff-surface: #121212;
-  --ff-text: #F2F2F2;
-  --ff-muted: #CFCFCF;
-  --ff-beige: #F5F5DC;
-  --ff-green: #90EE90;
-  --ff-yellow: #FFFF99;
-  --ff-border: #232323;
+  /* New Palette */
+  --color-dark-navy: #0D1321;
+  --color-deep-blue: #1D2D44;
+  --color-slate-blue: #3E5C76;
+  --color-sky-blue: #748CAB;
+  --color-cream: #F0EBD8;
+
+  /* Background and Text Colors */
+  --ff-bg: #0D1321;
+  --ff-surface: #1D2D44;
+  --ff-text: #F0EBD8;
+  --ff-muted: #3E5C76;
+  
+  /* Accent Colors - ONLY the 5 colors */
+  --ff-accent: #748CAB;
+  --ff-border: #3E5C76;
+  --ff-primary: #F0EBD8;
+  --ff-secondary: #1D2D44;
+  
+  /* Semantic mapping using ONLY the 5 colors */
+  --ff-beige: #F0EBD8;
+  --ff-green: #748CAB;
+  --ff-yellow: #3E5C76;
+  
+  /* Semantic usage - ONLY the 5 colors */
+  --ff-dark: #1D2D44;
+  --ff-darker: #0D1321;
   
   /* Spacing */
   --space-xs: 0.5rem;
@@ -35,8 +53,8 @@
   --radius-md: 8px;
   --radius-xl: 16px;
   
-  /* Shadows */
-  --shadow-1: 0 8px 24px rgba(0,0,0,0.25);
+  /* Shadows - using ONLY the 5 colors */
+  --shadow-1: 0 2px 8px rgba(13, 19, 33, 0.15);
   
   /* Container Max Widths */
   --container-sm: 640px;
@@ -97,7 +115,7 @@ input, button, textarea, select {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  color: var(--ff-beige);
+  color: var(--ff-text);
   line-height: var(--line-height-heading);
   font-weight: 700;
   margin-bottom: var(--space-sm);
@@ -115,13 +133,13 @@ p, ul, ol {
 }
 
 a {
-  color: var(--ff-green);
+  color: var(--ff-beige);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
 
 a:hover {
-  color: var(--ff-yellow);
+  color: var(--ff-text);
 }
 
 /* Focus Styles */
@@ -174,7 +192,7 @@ a:hover {
   border-radius: var(--radius-md);
   font-weight: 600;
   cursor: pointer;
-  transition: all var(--transition-base);
+  transition: background-color var(--transition-base), color var(--transition-base), transform var(--transition-base);
   border: none;
   position: relative;
   overflow: hidden;
@@ -182,45 +200,25 @@ a:hover {
   font-size: 1rem;
 }
 
-.btn::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(rgba(255, 255, 255, 0.1), transparent);
-  opacity: 0;
-  transition: opacity var(--transition-base);
-}
-
-.btn:hover::before {
-  opacity: 1;
-}
-
 .btn--primary {
-  background: linear-gradient(135deg, var(--ff-green), color-mix(in srgb, var(--ff-green) 85%, var(--ff-beige)));
+  background: var(--ff-beige);
   color: var(--ff-bg);
-  box-shadow: 0 4px 16px color-mix(in srgb, var(--ff-green) 30%, transparent);
 }
 
 .btn--primary:hover {
-  background: linear-gradient(135deg, color-mix(in srgb, var(--ff-green) 85%, white), color-mix(in srgb, var(--ff-green) 70%, var(--ff-beige)));
+  background: color-mix(in srgb, var(--ff-beige) 85%, white);
   color: var(--ff-bg);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px color-mix(in srgb, var(--ff-green) 40%, transparent);
 }
 
 .btn--secondary {
   background: transparent;
-  border: 2px solid var(--ff-beige);
-  color: var(--ff-beige);
-  backdrop-filter: blur(8px);
+  border: 1px solid var(--ff-border);
+  color: var(--ff-text);
 }
 
 .btn--secondary:hover {
-  background: linear-gradient(135deg, var(--ff-beige), color-mix(in srgb, var(--ff-beige) 85%, var(--ff-green)));
-  color: var(--ff-bg);
-  border-color: transparent;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px color-mix(in srgb, var(--ff-beige) 30%, transparent);
+  background: color-mix(in srgb, var(--ff-border) 40%, transparent);
+  color: var(--ff-text);
 }
 
 .btn--subtle {
@@ -235,33 +233,13 @@ a:hover {
 
 /* Cards */
 .card {
-  background: color-mix(in srgb, var(--ff-surface) 70%, transparent);
-  border-radius: var(--radius-lg);
+  background: var(--ff-surface);
+  border-radius: var(--radius-md);
   padding: var(--space-xl);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  border: 1px solid color-mix(in srgb, var(--ff-border) 35%, transparent);
-  transition: all var(--transition-base);
+  box-shadow: none;
+  border: 1px solid var(--ff-border);
+  transition: border-color var(--transition-base);
   position: relative;
-  overflow: hidden;
-}
-
-.card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, color-mix(in srgb, var(--ff-beige) 3%, transparent), transparent);
-  opacity: 0;
-  transition: opacity var(--transition-base);
-}
-
-.card:hover {
-  transform: translateY(-2px);
-  border-color: color-mix(in srgb, var(--ff-border) 55%, transparent);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
-}
-
-.card:hover::before {
-  opacity: 1;
 }
 
 /* Badges */
@@ -382,15 +360,15 @@ a:hover {
   left: 0;
   background: var(--ff-surface);
   min-width: 220px;
-  border-radius: var(--radius-md);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border-radius: var(--radius-sm);
+  box-shadow: none;
   border: 1px solid var(--ff-border);
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
   transition: all var(--transition-base);
   z-index: 100;
-  backdrop-filter: blur(10px);
+  backdrop-filter: none;
 }
 
 .has-dropdown:hover .nav__dropdown {
@@ -425,21 +403,15 @@ a:hover {
 }
 
 .nav__link--donate {
-  background: linear-gradient(135deg, #FFD700, #FFA500);
-  color: var(--ff-bg);
-  padding: 0.75rem var(--space-lg);
-  border-radius: var(--radius-md);
-  height: auto;
-  font-weight: 600;
-  transition: all var(--transition-fast);
-  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.2);
+  background: transparent;
+  border: 1px solid var(--ff-border);
+  color: var(--ff-text);
+  padding: 0.5rem var(--space-md);
+  border-radius: var(--radius-sm);
 }
 
 .nav__link--donate:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
-  background: linear-gradient(135deg, #FFE44D, #FFB347);
-  color: var(--ff-bg);
+  background: color-mix(in srgb, var(--ff-border) 40%, transparent);
 }
 
 /* Mobile Navigation */
@@ -589,7 +561,8 @@ a:hover {
   color: var(--ff-text);
   padding: var(--space-md);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-1);
+  box-shadow: none;
+  border: 1px solid var(--ff-border);
   transform: translateY(100%);
   opacity: 0;
   transition: transform var(--transition-base), opacity var(--transition-base);
@@ -622,8 +595,8 @@ a:hover {
 /* Animation Utilities */
 .reveal {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity var(--transition-base), transform var(--transition-base);
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .reveal.is-visible {
@@ -670,10 +643,10 @@ a:hover {
   letter-spacing: 0.1em;
   margin-bottom: var(--space-sm);
   padding: var(--space-xs) var(--space-md);
-  background: color-mix(in srgb, var(--ff-yellow) 10%, transparent);
+  background: transparent;
   border-radius: var(--radius-sm);
   position: relative;
-  backdrop-filter: blur(8px);
+  backdrop-filter: none;
 }
 
 .section__eyebrow::before,
@@ -696,37 +669,21 @@ a:hover {
 }
 
 .section__header h2 {
-  background: linear-gradient(135deg, var(--ff-beige), color-mix(in srgb, var(--ff-beige) 80%, var(--ff-green)));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--ff-beige);
   font-size: clamp(2rem, 4vw, 3rem);
   margin-bottom: var(--space-md);
-  text-shadow: 0 0 30px color-mix(in srgb, var(--ff-beige) 20%, transparent);
-  position: relative;
+  text-shadow: none;
 }
 
 /* Hero Section */
 .hero {
   min-height: auto;
   padding-block: var(--space-2xl);
-  background:
-    radial-gradient(circle at 20% 30%, color-mix(in srgb, var(--ff-green) 8%, transparent), transparent 40%),
-    radial-gradient(circle at 80% 70%, color-mix(in srgb, var(--ff-beige) 8%, transparent), transparent 40%),
-    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--ff-yellow) 3%, transparent), transparent 60%),
-    linear-gradient(135deg, transparent 0%, color-mix(in srgb, var(--ff-surface) 20%, transparent) 100%);
+  background: var(--ff-bg);
   position: relative;
-  overflow: hidden;
 }
 
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30z' fill='rgba(245,245,220,0.03)'/%3E%3C/svg%3E");
-  opacity: 0.7;
-  pointer-events: none;
-}
+.hero::before { display: none; }
 
 .hero__content {
   max-width: var(--container-md);
@@ -748,11 +705,8 @@ a:hover {
   margin-bottom: var(--space-lg);
   line-height: 1.1;
   text-align: center;
-  background: linear-gradient(135deg, var(--ff-beige), color-mix(in srgb, var(--ff-beige) 80%, var(--ff-green)));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-shadow: 0 0 40px color-mix(in srgb, var(--ff-beige) 20%, transparent);
+  color: var(--ff-beige);
+  text-shadow: none;
 }
 
 .typing-text {
@@ -805,15 +759,15 @@ a:hover {
 }
 
 .stat:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .stat__number {
-  background: linear-gradient(135deg, var(--ff-surface) 0%, color-mix(in srgb, var(--ff-surface) 95%, var(--ff-beige)) 100%);
+  background: var(--ff-surface);
   border-radius: var(--radius-xl);
   padding: 2.5rem 2rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-  border: 1px solid color-mix(in srgb, var(--ff-border) 60%, transparent);
+  box-shadow: none;
+  border: 1px solid var(--ff-border);
   min-height: 7rem;
   display: flex;
   align-items: center;
@@ -821,23 +775,11 @@ a:hover {
   position: relative;
   width: 100%;
   max-width: 300px;
-  backdrop-filter: blur(10px);
-  transition: all var(--transition-base);
+  backdrop-filter: none;
+  transition: border-color var(--transition-base);
 }
 
-.stat__number::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: var(--radius-xl);
-  background: linear-gradient(135deg, color-mix(in srgb, var(--ff-beige) 5%, transparent), transparent);
-  opacity: 0;
-  transition: opacity var(--transition-base);
-}
-
-.stat:hover .stat__number::before {
-  opacity: 1;
-}
+.stat__number::before { display: none; }
 
 .stat__number span {
   font-family: var(--font-mono);
@@ -845,7 +787,7 @@ a:hover {
   font-weight: 700;
   color: var(--ff-beige);
   letter-spacing: 0.05em;
-  text-shadow: 0 0 20px color-mix(in srgb, var(--ff-beige) 30%, transparent);
+  text-shadow: none;
   text-align: center;
   position: relative;
   z-index: 1;
@@ -974,11 +916,11 @@ a:hover {
 }
 
 .footer__title {
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-size: 0.95rem;
+  text-transform: none;
+  letter-spacing: 0.01em;
   margin-bottom: var(--space-sm);
-  color: var(--ff-text);
+  color: var(--ff-muted);
 }
 
 .footer__list {
@@ -996,9 +938,7 @@ a:hover {
   transition: color var(--transition-fast);
 }
 
-.footer__list a:hover {
-  color: var(--ff-beige);
-}
+.footer__list a:hover { color: var(--ff-text); }
 
 .footer__social {
   display: flex;
@@ -1110,8 +1050,8 @@ a:hover {
 }
 
 .lesson-number {
-  background: linear-gradient(135deg, var(--ff-green), color-mix(in srgb, var(--ff-green) 80%, var(--ff-beige)));
-  color: var(--ff-bg);
+  background: var(--ff-border);
+  color: var(--ff-text);
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
@@ -1167,9 +1107,7 @@ a:hover {
   flex-shrink: 0;
 }
 
-.lesson-detail[open] .lesson-number {
-  background: linear-gradient(135deg, var(--ff-beige), color-mix(in srgb, var(--ff-beige) 80%, var(--ff-green)));
-}
+.lesson-detail[open] .lesson-number { background: var(--ff-beige); color: var(--ff-bg); }
 
 /* Lesson Viewer Styles */
 .progress-container {
@@ -1188,7 +1126,7 @@ a:hover {
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--ff-green), var(--ff-beige));
+  background: var(--ff-beige);
   border-radius: var(--radius-sm);
   transition: width var(--transition-base);
   width: 10%;
@@ -1492,7 +1430,7 @@ a:hover {
 
 .quiz-progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--ff-green), var(--ff-beige));
+  background: var(--ff-beige);
   border-radius: var(--radius-sm);
   transition: width var(--transition-base);
   width: 20%;

@@ -105,7 +105,7 @@
                 <span class="text-muted" aria-hidden="true">/</span>
               </li>
               <li>
-                <a href="/course-budgeting-101.html" class="text-muted">Budgeting & Saving</a>
+                <a href="/course-budgeting-101.html" id="course-breadcrumb" class="text-muted">Budgeting & Saving</a>
                 <span class="text-muted" aria-hidden="true">/</span>
               </li>
               <li>
@@ -139,18 +139,7 @@
             </button>
             
             <div class="lesson-selector">
-              <select id="lesson-select" class="select">
-                <option value="1">Lesson 1: Introduction to Budgeting</option>
-                <option value="2">Lesson 2: Tracking Income and Expenses</option>
-                <option value="3">Lesson 3: Creating Your First Budget</option>
-                <option value="4">Lesson 4: Needs vs. Wants</option>
-                <option value="5">Lesson 5: Emergency Funds</option>
-                <option value="6">Lesson 6: Setting Financial Goals</option>
-                <option value="7">Lesson 7: Reducing Expenses</option>
-                <option value="8">Lesson 8: Automating Savings</option>
-                <option value="9">Lesson 9: Tracking Progress and Adjusting Budget</option>
-                <option value="10">Lesson 10: Developing a Saving Mindset</option>
-              </select>
+              <select id="lesson-select" class="select"></select>
             </div>
             
             <button class="btn btn--primary" id="next-btn">
@@ -175,12 +164,50 @@
   </main>
   
   <!-- Footer -->
-  <footer class="section" style="background-color: var(--ff-surface);">
+  <footer class="footer">
     <div class="container">
-      <div class="text-center">
-        <p class="text-muted">
-          © 2025 FutureFunds. All rights reserved.
-        </p>
+      <div class="footer__grid">
+        <!-- Learn -->
+        <div class="footer__column">
+          <h2 class="footer__title">Learn</h2>
+          <ul class="footer__list">
+            <li><a href="/programs.html">Programs</a></li>
+            <li><a href="/courses.html">Courses</a></li>
+            <li><a href="/resources.html">Resources</a></li>
+            <li><a href="/events.html">Events</a></li>
+          </ul>
+        </div>
+
+        <!-- Courses -->
+        <div class="footer__column">
+          <h2 class="footer__title">Courses</h2>
+          <ul class="footer__list">
+            <li><a href="/course-budgeting-101.html">Budgeting 101</a></li>
+            <li><a href="/course-investing-101.html">Investing 101</a></li>
+            <li><a href="/course-credit-smart.html">Credit Smart</a></li>
+          </ul>
+        </div>
+
+        <!-- About -->
+        <div class="footer__column">
+          <h2 class="footer__title">About</h2>
+          <ul class="footer__list">
+            <li><a href="/about.html">Our Mission</a></li>
+            <li><a href="/volunteer.html">Volunteer</a></li>
+            <li><a href="/donate.html">Donate</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Connect -->
+        <div class="footer__column">
+          <h2 class="footer__title">Connect</h2>
+          <ul class="footer__list">
+            <li><a href="https://twitter.com/futurefunds">Twitter</a></li>
+            <li><a href="https://linkedin.com/company/futurefunds">LinkedIn</a></li>
+            <li><a href="https://instagram.com/futurefunds">Instagram</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </footer>

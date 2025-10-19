@@ -1,10 +1,10 @@
 /**
  * Lesson Viewer for FutureFunds Courses
- * Handles lesson navigation and content display
+ * Handles lesson navigation and content display across multiple courses
  */
 
 // Lesson data for Budgeting & Saving course
-const lessonData = {
+const budgetingLessons = {
   1: {
     title: "Introduction to Budgeting",
     subtitle: "What is a budget and why it matters",
@@ -443,14 +443,161 @@ const lessonData = {
   // All lessons complete!
 };
 
+// Lesson data for Investing 101 course (8 lessons)
+const investingLessons = {
+  1: {
+    title: "Investment Fundamentals",
+    subtitle: "Core concepts every investor should know",
+    article: "Investing Basics",
+    content: `
+      <h1>Investment Fundamentals</h1>
+      <p class="text-muted" style="font-size: 1.1rem; margin-bottom: var(--space-xl);">Core concepts every investor should know</p>
+      <div class="lesson-section">
+        <h2>What is Investing?</h2>
+        <p>Investing is the act of allocating resources, usually money, with the expectation of generating an income or profit.</p>
+      </div>
+      <div class="lesson-actions">
+        <button class="btn btn--primary" onclick="completeLesson()">Mark Complete & Continue</button>
+      </div>
+    `
+  },
+  2: {
+    title: "Types of Investments",
+    subtitle: "Stocks, bonds, funds and more",
+    article: "Investment Vehicles",
+    content: `
+      <h1>Types of Investments</h1>
+      <p class="text-muted" style="font-size: 1.1rem; margin-bottom: var(--space-xl);">Stocks, bonds, mutual funds, ETFs and more</p>
+      <div class="lesson-actions">
+        <button class="btn btn--primary" onclick="completeLesson()">Mark Complete & Continue</button>
+      </div>
+    `
+  },
+  3: {
+    title: "Risk and Return",
+    subtitle: "Balancing potential gains and losses",
+    article: "Risk Basics",
+    content: `
+      <h1>Risk and Return</h1>
+      <p class="text-muted" style="font-size: 1.1rem; margin-bottom: var(--space-xl);">Balancing potential gains and losses</p>
+      <div class="lesson-actions">
+        <button class="btn btn--primary" onclick="completeLesson()">Mark Complete & Continue</button>
+      </div>
+    `
+  },
+  4: {
+    title: "Building a Portfolio",
+    subtitle: "Asset allocation and diversification",
+    article: "Portfolio Basics",
+    content: `
+      <h1>Building a Portfolio</h1>
+      <p class="text-muted" style="font-size: 1.1rem; margin-bottom: var(--space-xl);">Asset allocation and diversification</p>
+      <div class="lesson-actions">
+        <button class="btn btn--primary" onclick="completeLesson()">Mark Complete & Continue</button>
+      </div>
+    `
+  },
+  5: {
+    title: "Market Analysis",
+    subtitle: "Fundamental and technical overviews",
+    article: "Market Analysis",
+    content: `
+      <h1>Market Analysis</h1>
+      <p class="text-muted" style="font-size: 1.1rem; margin-bottom: var(--space-xl);">Fundamental and technical overviews</p>
+      <div class="lesson-actions">
+        <button class="btn btn--primary" onclick="completeLesson()">Mark Complete & Continue</button>
+      </div>
+    `
+  },
+  6: {
+    title: "Investment Strategies",
+    subtitle: "Approaches for different goals",
+    article: "Strategies",
+    content: `
+      <h1>Investment Strategies</h1>
+      <p class="text-muted" style="font-size: 1.1rem; margin-bottom: var(--space-xl);">Approaches for different goals</p>
+      <div class="lesson-actions">
+        <button class="btn btn--primary" onclick="completeLesson()">Mark Complete & Continue</button>
+      </div>
+    `
+  },
+  7: {
+    title: "Common Pitfalls",
+    subtitle: "Mistakes to avoid",
+    article: "Pitfalls",
+    content: `
+      <h1>Common Investment Pitfalls</h1>
+      <p class="text-muted" style="font-size: 1.1rem; margin-bottom: var(--space-xl);">Mistakes to avoid</p>
+      <div class="lesson-actions">
+        <button class="btn btn--primary" onclick="completeLesson()">Mark Complete & Continue</button>
+      </div>
+    `
+  },
+  8: {
+    title: "Long-term Planning",
+    subtitle: "Staying the course",
+    article: "Long-term Investing",
+    content: `
+      <h1>Long-term Planning</h1>
+      <p class="text-muted" style="font-size: 1.1rem; margin-bottom: var(--space-xl);">Staying the course</p>
+      <div class="lesson-actions">
+        <button class="btn btn--primary" onclick="completeLesson()">Mark Complete & Continue</button>
+      </div>
+    `
+  }
+};
+
+// Course datasets registry
+const courseDatasets = {
+  budgeting: {
+    name: "Budgeting & Saving",
+    courseUrl: "/course-budgeting-101.html",
+    totalLessons: 10,
+    lessons: budgetingLessons,
+    lessonTitles: [
+      "Introduction to Budgeting",
+      "Tracking Income and Expenses",
+      "Creating Your First Budget",
+      "Needs vs. Wants",
+      "Emergency Funds",
+      "Setting Financial Goals",
+      "Reducing Expenses",
+      "Automating Savings",
+      "Tracking Progress and Adjusting Budget",
+      "Developing a Saving Mindset"
+    ]
+  },
+  investing: {
+    name: "Investing 101",
+    courseUrl: "/course-investing-101.html",
+    totalLessons: 8,
+    lessons: investingLessons,
+    lessonTitles: [
+      "Investment Fundamentals",
+      "Types of Investments",
+      "Risk and Return",
+      "Building a Portfolio",
+      "Market Analysis",
+      "Investment Strategies",
+      "Common Pitfalls",
+      "Long-term Planning"
+    ]
+  }
+};
+
 class LessonViewer {
   constructor() {
+    const urlParams = new URLSearchParams(window.location.search);
+    this.courseKey = urlParams.get('course') || 'budgeting';
+    this.dataset = courseDatasets[this.courseKey] || courseDatasets.budgeting;
     this.currentLesson = 1;
-    this.totalLessons = 10;
+    this.totalLessons = this.dataset.totalLessons;
     this.init();
   }
 
   init() {
+    this.populateLessonSelect();
+    this.updateCourseBreadcrumb();
     this.updateProgress();
     this.loadLesson(this.currentLesson);
     this.bindEvents();
@@ -467,7 +614,7 @@ class LessonViewer {
   }
 
   loadLesson(lessonNumber) {
-    const lesson = lessonData[lessonNumber];
+    const lesson = this.dataset.lessons[lessonNumber];
     if (!lesson) {
       // If lesson data doesn't exist, show placeholder
       document.getElementById('lesson-content').innerHTML = `
@@ -486,6 +633,34 @@ class LessonViewer {
     
     this.updateProgress();
     this.updateNavigationButtons();
+  }
+
+  populateLessonSelect() {
+    const select = document.getElementById('lesson-select');
+    if (!select) return;
+    select.innerHTML = '';
+    this.dataset.lessonTitles.forEach((title, index) => {
+      const option = document.createElement('option');
+      const lessonNumber = index + 1;
+      option.value = String(lessonNumber);
+      option.textContent = `Lesson ${lessonNumber}: ${title}`;
+      select.appendChild(option);
+    });
+  }
+
+  updateCourseBreadcrumb() {
+    const breadcrumbLink = document.getElementById('course-breadcrumb');
+    if (breadcrumbLink) {
+      breadcrumbLink.textContent = this.dataset.name;
+      breadcrumbLink.setAttribute('href', this.dataset.courseUrl);
+    }
+    // Optionally update document title to reflect course
+    try {
+      if (document && document.title) {
+        const base = 'Lesson - ' + this.dataset.name + ' - FutureFunds';
+        document.title = base;
+      }
+    } catch (_) {}
   }
 
   updateProgress() {
@@ -544,12 +719,13 @@ window.completeLesson = function() {
   } else {
     // Show course completion with achievements
     const achievements = window.progressTracker ? window.progressTracker.getAchievements() : [];
+    const courseName = viewer.dataset.name;
     const completionMessage = `
-      🎉 Congratulations! You have completed the Budgeting & Saving course!
+      🎉 Congratulations! You have completed the ${courseName} course!
       
       ${achievements.length > 0 ? 'Achievements Unlocked:\n' + achievements.map(a => `${a.icon} ${a.title}`).join('\n') : ''}
       
-      You're now ready to take control of your finances!
+      Keep going on your financial journey!
     `;
     alert(completionMessage);
   }

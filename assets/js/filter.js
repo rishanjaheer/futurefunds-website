@@ -19,7 +19,8 @@ class CourseFilter {
     try {
       // Load courses data
       const response = await fetch('/assets/data/courses.json');
-      this.courses = await response.json();
+      const data = await response.json();
+      this.courses = Array.isArray(data) ? data : (data.courses || []);
       
       // Initialize DOM elements
       this.courseGrid = document.querySelector('.course-grid');
@@ -160,7 +161,7 @@ class CourseFilter {
       <div class="text-center stack" style="grid-column: 1 / -1; padding: var(--space-2xl);">
         <h3>No courses found</h3>
         <p class="text-muted">Try adjusting your filters or search terms</p>
-        <button class="btn btn--secondary" onclick="this.resetFilters()">
+        <button class="btn btn--secondary" onclick="window.courseFilter && window.courseFilter.resetFilters()">
           Reset Filters
         </button>
       </div>
@@ -282,4 +283,10 @@ if (document.readyState === 'loading') {
 }
 
 export default CourseFilter;
+
+// Expose instance globally for UI callbacks
+window.courseFilter = window.courseFilter || null;
+document.addEventListener('DOMContentLoaded', () => {
+  window.courseFilter = new CourseFilter();
+});
 

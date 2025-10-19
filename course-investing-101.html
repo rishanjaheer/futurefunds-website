@@ -259,7 +259,7 @@
               <h2>Related Courses</h2>
               <ul class="stack-sm" style="list-style: none;">
                 <li>
-                  <a href="/course-etf-basics.html">ETF Basics</a>
+                  <a href="/course-credit-smart.html">Credit Smart</a>
                 </li>
                 <li>
                   <a href="/course-budgeting-101.html">Budgeting 101</a>
@@ -282,55 +282,50 @@
   </main>
   
   <!-- Footer -->
-  <footer class="section" style="background-color: var(--ff-surface);">
+  <footer class="footer">
     <div class="container">
-      <div class="grid" style="gap: var(--space-xl);">
-        <div>
-          <h2 class="nav__logo">FutureFunds</h2>
-          <p class="text-muted" style="margin-top: var(--space-sm);">
-            Empowering the next generation with financial knowledge and skills.
-          </p>
+      <div class="footer__grid">
+        <!-- Learn -->
+        <div class="footer__column">
+          <h2 class="footer__title">Learn</h2>
+          <ul class="footer__list">
+            <li><a href="/programs.html">Programs</a></li>
+            <li><a href="/courses.html">Courses</a></li>
+            <li><a href="/resources.html">Resources</a></li>
+            <li><a href="/events.html">Events</a></li>
+          </ul>
         </div>
-        
-        <nav aria-label="Footer Navigation">
-          <div class="grid" style="gap: var(--space-lg);">
-            <div>
-              <h3>Learn</h3>
-              <ul class="stack-sm" style="list-style: none;">
-                <li><a href="/programs.html">Programs</a></li>
-                <li><a href="/courses.html">Courses</a></li>
-                <li><a href="/resources.html">Resources</a></li>
-                <li><a href="/events.html">Events</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3>About</h3>
-              <ul class="stack-sm" style="list-style: none;">
-                <li><a href="/about.html">Our Mission</a></li>
-                <li><a href="/about.html#team">Team</a></li>
-                <li><a href="/volunteer.html">Volunteer</a></li>
-                <li><a href="/contact.html">Contact</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3>Connect</h3>
-              <ul class="stack-sm" style="list-style: none;">
-                <li><a href="https://twitter.com/futurefunds">Twitter</a></li>
-                <li><a href="https://linkedin.com/company/futurefunds">LinkedIn</a></li>
-                <li><a href="https://instagram.com/futurefunds">Instagram</a></li>
-                <li><a href="/contact.html">Get in Touch</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-      
-      <div style="margin-top: var(--space-2xl); text-align: center;">
-        <p class="text-muted">
-          © 2025 FutureFunds. All rights reserved.
-        </p>
+
+        <!-- Courses -->
+        <div class="footer__column">
+          <h2 class="footer__title">Courses</h2>
+          <ul class="footer__list">
+            <li><a href="/course-budgeting-101.html">Budgeting 101</a></li>
+            <li><a href="/course-investing-101.html">Investing 101</a></li>
+            <li><a href="/course-credit-smart.html">Credit Smart</a></li>
+          </ul>
+        </div>
+
+        <!-- About -->
+        <div class="footer__column">
+          <h2 class="footer__title">About</h2>
+          <ul class="footer__list">
+            <li><a href="/about.html">Our Mission</a></li>
+            <li><a href="/volunteer.html">Volunteer</a></li>
+            <li><a href="/donate.html">Donate</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Connect -->
+        <div class="footer__column">
+          <h2 class="footer__title">Connect</h2>
+          <ul class="footer__list">
+            <li><a href="https://twitter.com/futurefunds">Twitter</a></li>
+            <li><a href="https://linkedin.com/company/futurefunds">LinkedIn</a></li>
+            <li><a href="https://instagram.com/futurefunds">Instagram</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </footer>
@@ -341,11 +336,8 @@
   <script>
     // Handle "Start Course" button
     document.getElementById('start-course').addEventListener('click', () => {
-      // This is a placeholder - in a real implementation, this would:
-      // 1. Check if user is logged in
-      // 2. Create/resume course progress
-      // 3. Redirect to first lesson or last viewed
-      alert('Course functionality coming soon! Check back for updates.');
+      // Redirect to investing lessons viewer starting with lesson 1
+      window.location.href = '/lesson.html?course=investing&lesson=1';
     });
   </script>
 </body>

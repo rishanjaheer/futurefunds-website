@@ -5,7 +5,10 @@
 
 class ProgressTracker {
   constructor() {
-    this.courseId = 'budgeting-saving';
+    const urlParams = new URLSearchParams(window.location.search);
+    const courseParam = urlParams.get('course');
+    this.courseId = courseParam === 'investing' ? 'investing-101' : 'budgeting-saving';
+    this.totalLessons = this.courseId === 'investing-101' ? 8 : 10;
     this.storageKey = `ff-course-${this.courseId}`;
     this.progress = this.loadProgress();
   }
@@ -88,8 +91,7 @@ class ProgressTracker {
 
   // Course Statistics
   getCompletionPercentage() {
-    const totalLessons = 10;
-    return Math.round((this.progress.completedLessons.length / totalLessons) * 100);
+    return Math.round((this.progress.completedLessons.length / this.totalLessons) * 100);
   }
 
   getNextLesson() {
@@ -97,11 +99,11 @@ class ProgressTracker {
     if (completedLessons.length === 0) return 1;
     
     const lastCompleted = Math.max(...completedLessons);
-    return Math.min(lastCompleted + 1, 10);
+    return Math.min(lastCompleted + 1, this.totalLessons);
   }
 
   isCourseComplete() {
-    return this.progress.completedLessons.length === 10;
+    return this.progress.completedLessons.length === this.totalLessons;
   }
 
   // Time Tracking
@@ -168,8 +170,8 @@ class ProgressTracker {
     if (this.isCourseComplete()) {
       achievements.push({
         id: 'course-complete',
-        title: 'Budget Master',
-        description: 'Completed the entire Budgeting & Saving course',
+        title: this.courseId === 'investing-101' ? 'Investing Graduate' : 'Budget Master',
+        description: this.courseId === 'investing-101' ? 'Completed the entire Investing 101 course' : 'Completed the entire Budgeting & Saving course',
         icon: '🏆',
         unlockedAt: this.isCourseComplete() ? new Date().toISOString() : null
       });
